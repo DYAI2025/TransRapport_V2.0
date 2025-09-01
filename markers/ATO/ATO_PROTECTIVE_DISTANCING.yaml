@@ -1,0 +1,24 @@
+id: ATO_PROTECTIVE_DISTANCING
+version: '3.3'
+frame:
+  signal:
+  - aus Selbstschutz
+  - muss mich schützen
+  - Abstand brauche
+  concept: Schutzmechanismus
+  pragmatics: Emotionale Regulation
+  narrative: protection
+pattern:
+- (?i)\b(aus selbstschutz|zum selbstschutz)\b
+- (?i)\b(muss mich schützen|mich schützen)\b
+- (?i)\b(abstand brauch|distanz brauch)\b
+- (?i)\b(meine grenzen|meinen schutzraum)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- schutz
+- grenzen
+- regulation
+schema_version: '3.3'

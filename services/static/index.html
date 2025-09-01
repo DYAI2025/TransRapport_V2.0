@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serapi Transcriber UI (I1)</title>
+  <style>
+    :root { --bg: #0b0f14; --fg: #e8eef4; --muted: #9fb3c8; --accent: #5cc8ff; --ok:#60d394; --warn:#ffd166; --err:#ef476f; }
+    body { margin: 0; font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: var(--bg); color: var(--fg); }
+    header { padding: 14px 16px; border-bottom: 1px solid #223; display: flex; gap: 12px; align-items: center; }
+    h1 { font-size: 18px; margin: 0; }
+    main { padding: 16px; max-width: 960px; }
+    section { margin-bottom: 22px; }
+    code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .card { border: 1px solid #223; border-radius: 8px; padding: 12px; background: #0f141b; }
+    .btn { background: #16212d; color: var(--fg); border: 1px solid #2a4861; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background: #1b2735; }
+    .btn.ok { border-color: #2d6b49; background: #143022; }
+    .btn.warn { border-color: #6b5f2d; background: #302814; }
+    .btn.err { border-color: #6b2d3a; background: #30141b; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #223; padding: 8px 6px; text-align: left; }
+    th { color: var(--muted); font-weight: 600; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    small { color: var(--muted); }
+    .muted { color: var(--muted); }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip { padding: 4px 8px; border-radius: 999px; border: 1px solid #284; background: #112218; }
+    .chip.sem { border-color: #445; background: #141a22; }
+    .chip.clu { border-color: #623; background: #1f1420; }
+    .chip .ts { color: var(--muted); margin-left: 6px; font-size: 12px; }
+    .chip.ato { border-color: #265; background: #0e1a15; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+    .chip { padding: 4px 8px; border-radius: 999px; border: 1px solid #284; background: #112218; }
+    .chip.sem { border-color: #445; background: #141a22; }
+    .chip.clu { border-color: #623; background: #1f1420; }
+    .chip .ts { color: var(--muted); margin-left: 6px; font-size: 12px; }
+  </style>
+  <script>
+    async function api(path, init) {
+      const res = await fetch(path, init);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const ct = res.headers.get('content-type') || '';
+      if (ct.includes('application/json')) return await res.json();
+      return await res.text();
+    }
+
+    async function loadHealth() {
+      try {
+        const h = await api('/healthz');
+        const el = document.getElementById('health');
+        el.innerHTML = '';
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <div class="row">
+            <div><b>Status:</b> <span class="mono">${h.ok ? 'OK' : 'NOK'}</span></div>
+            <div><b>Mode:</b> <span class="mono">${h.mode}</span></div>
+            <div><b>Model dir:</b> <span class="mono">${h.model_dir}</span>
+              <small>${h.model_dir_exists ? 'exists' : 'missing'}</small></div>
+            <div><b>Loaded:</b> <span class="mono">${h.model_loaded}</span></div>
+          </div>
+          <div class="row">
+            <div><b>Data root:</b> <span class="mono">${h.data_root}</span></div>
+            <div><b>Window:</b> <span class="mono">${h.window_seconds}s</span></div>
+            <div><b>Idle flush:</b> <span class="mono">${h.idle_flush_seconds}s</span></div>
+          </div>`;
+        el.appendChild(div);
+      } catch (e) {
+        document.getElementById('health').textContent = 'Health error: ' + e.message;
+      }
+    }
+
+    async function startSession(ev) {
+      ev?.preventDefault();
+      const lang = document.getElementById('lang').value;
+      const req = { lang: lang === 'auto' ? null : lang };
+      const obj = await api('/session/start', { method: 'POST', headers: {'content-type':'application/json'}, body: JSON.stringify(req)});
+      alert('Session started: ' + obj.session_id);
+      await listSessions();
+    }
+
+    async function listSessions() {
+      const data = await api('/session/list');
+      const tbody = document.getElementById('sessions-body');
+      tbody.innerHTML = '';
+      for (const s of data.sessions) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="mono">${s.id}</td>
+          <td class="mono">${s.lang ?? ''}</td>
+          <td>${s.segments_count}</td>
+          <td class="row">
+            <a class="btn" href="/session/${s.id}/export.txt" target="_blank">TXT</a>
+            <a class="btn" href="/session/${s.id}/export.txt?ts=start" target="_blank">TXT+Start</a>
+            <a class="btn" href="/session/${s.id}/export.txt?ts=span" target="_blank">TXT+TS</a>
+            <a class="btn" href="/session/${s.id}/export.srt" target="_blank">SRT</a>
+            <a class="btn" href="/session/${s.id}/transcript" target="_blank">JSON</a>
+            <button class="btn" onclick="showStats('${s.id}')">Stats</button>
+            <button class="btn" onclick="flush('${s.id}')">Flush</button>
+            <button class="btn warn" onclick="stopSess('${s.id}')">Stop</button>
+            <button class="btn" onclick="connectLive('${s.id}')">Live</button>
+            <button class="btn" onclick="copyId('${s.id}')">Copy ID</button>
+          </td>`;
+        tbody.appendChild(tr);
+      }
+    }
+
+    async function flush(id) {
+      await api(`/session/${id}/flush`, {method:'POST'});
+      await listSessions();
+    }
+
+    async function stopSess(id) {
+      await api(`/session/${id}/stop`, {method:'POST'});
+      await listSessions();
+    }
+
+    async function copyId(id) {
+      try { await navigator.clipboard.writeText(id); } catch (e) {}
+    }
+
+    async function init() {
+      await loadHealth();
+      await listSessions();
+      setInterval(listSessions, 4000);
+    }
+    addEventListener('DOMContentLoaded', init);
+
+    // Live events console
+    let liveWs = null;
+    const liveSegs = [];
+    function appendLog(line) {
+      const pre = document.getElementById('live-log');
+      pre.textContent += line + "\n";
+      pre.scrollTop = pre.scrollHeight;
+    }
+    async function connectLive(id) {
+      disconnectLive();
+      document.getElementById('live-sid').value = id;
+      const url = (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/ws/events?session_id=' + encodeURIComponent(id);
+      liveWs = new WebSocket(url);
+      liveWs.onopen = () => appendLog(`# connected session=${id}`);
+      liveWs.onmessage = (ev) => {
+        try {
+          const obj = JSON.parse(ev.data);
+          if (obj.type === 'partial_transcript') {
+            const n = (obj.added || []).length;
+            appendLog(`+${n} segs (total=${obj.total_segments})`);
+            for (const s of (obj.added||[])) {
+              appendLog(`  [${s.t0.toFixed(2)}-${s.t1.toFixed(2)}] ${s.text}`);
+              liveSegs.push({t0: Number(s.t0||0), t1: Number(s.t1||0), text: (s.text||'').trim(), speaker: s.speaker||''});
+            }
+            renderTranscript();
+          } else if (obj.type === 'marker') {
+            appendLog(`MARKER ${obj.name} [${Number(obj.t0||0).toFixed(2)}-${Number(obj.t1||0).toFixed(2)}] ${obj.text}`);
+            pushMarker(obj);
+            renderTranscript();
+          } else if (obj.type === 'error') {
+            appendLog(`! error: ${obj.error}`);
+          } else {
+            appendLog(`? ${ev.data}`);
+          }
+        } catch {
+          appendLog(ev.data);
+        }
+      };
+      liveWs.onclose = () => appendLog('# disconnected');
+    }
+    function disconnectLive() {
+      if (liveWs) { try { liveWs.close(); } catch {} }
+      liveWs = null;
+    }
+    function manualConnect() {
+      const id = document.getElementById('live-sid').value.trim();
+      if (id) connectLive(id);
+    }
+    function clearLog() { document.getElementById('live-log').textContent = ''; }
+
+    async function showStats(id){
+      const box = document.getElementById('stats');
+      box.innerHTML = '<div class="card">Lade…</div>';
+      try {
+        const st = await api(`/session/${id}/stats`);
+        const rows = (st.speakers||[]).map(s => `<tr><td class="mono">${s.speaker}</td><td>${s.seconds}s</td><td>${(s.share*100).toFixed(1)}%</td></tr>`).join('');
+        box.innerHTML = `<div class="card"><h3>Speaker Stats – <span class="mono">${id}</span></h3>
+          <table><thead><tr><th>Sprecher</th><th>Sekunden</th><th>Anteil</th></tr></thead>
+          <tbody>${rows}</tbody></table>
+          <small>Total: ${st.total_seconds}s</small></div>`;
+      } catch(e){ box.innerHTML = `<div class="card">Fehler: ${e.message}</div>`; }
+    }
+
+    // Browser capture logic
+    let rec = { ws: null, ctx: null, proc: null, stream: null, sid: null, sr: 16000, buf: [], frameSamples: 480 }, meterEl = null;
+    function f32ToPcm16(f32) {
+      const out = new Int16Array(f32.length);
+      for (let i=0;i<f32.length;i++) {
+        let s = Math.max(-1, Math.min(1, f32[i]));
+        out[i] = s < 0 ? s * 0x8000 : s * 0x7FFF;
+      }
+      return out;
+    }
+    async function toggleRecord(){ if (rec.ws) stopRecord(); else startRecord(); }
+    async function startRecord(){
+      try{
+        document.getElementById('rec-status').textContent = 'init…';
+        const media = await navigator.mediaDevices.getUserMedia({audio:true});
+        rec.stream = media;
+        rec.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const src = rec.ctx.createMediaStreamSource(media);
+        const bufferSize = 2048;
+        const proc = rec.ctx.createScriptProcessor(bufferSize, 1, 1);
+        rec.proc = proc;
+        rec.sr = rec.ctx.sampleRate; // e.g. 48000
+        rec.frameSamples = Math.round(rec.sr * 0.03); // 30ms
+        let meterDecay = 0.9, meterPeak = 0;
+        proc.onaudioprocess = (ev)=>{
+          const ch = ev.inputBuffer.getChannelData(0);
+          // compute RMS for meter
+          let rms=0; for(let i=0;i<ch.length;i++){ const v=ch[i]; rms+=v*v; } rms=Math.sqrt(rms/ch.length);
+          meterPeak = Math.max(rms, meterPeak*meterDecay);
+          const pct = Math.min(1, meterPeak*2)*100; // simple scale
+          if (!meterEl) meterEl = document.getElementById('meter');
+          meterEl.style.width = pct.toFixed(0)+'%';
+          rec.buf.push(new Float32Array(ch));
+          // send in ~30ms frames
+          let total = rec.buf.reduce((a,b)=>a+b.length,0);
+          while(total >= rec.frameSamples){
+            const frame = new Float32Array(rec.frameSamples);
+            let offset=0;
+            while(offset < frame.length){
+              const chunk = rec.buf[0];
+              const need = frame.length - offset;
+              const take = Math.min(need, chunk.length);
+              frame.set(chunk.subarray(0, take), offset);
+              if (take === chunk.length) rec.buf.shift(); else rec.buf[0] = chunk.subarray(take);
+              offset += take;
+            }
+            const pcm16 = f32ToPcm16(frame);
+            if (rec.ws && rec.ws.readyState===1) rec.ws.send(pcm16.buffer);
+            total -= rec.frameSamples;
+          }
+        };
+        src.connect(proc); proc.connect(rec.ctx.destination);
+        // create session
+        const resp = await api('/session/start', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({lang:null})});
+        rec.sid = resp.session_id;
+        // ws connect
+        const url = (location.protocol==='https:'?'wss://':'ws://')+location.host+`/ws/stream?session_id=${encodeURIComponent(rec.sid)}&sr=${rec.sr}&window=12&idle_flush=0.8&soft_flush=6`;
+        rec.ws = new WebSocket(url);
+        rec.ws.binaryType = 'arraybuffer';
+        rec.ws.onopen = ()=>{ document.getElementById('rec-status').textContent = `rec @${rec.sr}Hz sid=${rec.sid}`; document.getElementById('rec-btn').textContent='Aufnahme stoppen'; };
+        rec.ws.onclose = ()=>{ document.getElementById('rec-status').textContent = 'stopped'; document.getElementById('rec-btn').textContent='Aufnahme starten'; };
+      }catch(e){ document.getElementById('rec-status').textContent = 'error'; console.error(e); }
+    }
+    async function stopRecord(){
+      try{ if(rec.proc){ rec.proc.disconnect(); } }catch{}
+      try{ if(rec.ctx){ await rec.ctx.close(); } }catch{}
+      try{ if(rec.ws && rec.ws.readyState===1){ rec.ws.send('flush'); rec.ws.close(); } }catch{}
+      try{ if(rec.stream){ for(const t of rec.stream.getTracks()) t.stop(); } }catch{}
+      rec.ws=null; rec.ctx=null; rec.proc=null; rec.stream=null; rec.buf=[];
+    }
+
+    // Marker chips logic
+    const markerBuf = [];
+    let markerCriticalOnly = false;
+    const criticalSet = new Set(['SEM_GUILT_FRAMING','SEM_COMMITMENT_REQUEST']);
+    function isCritical(name){ return name.startsWith('CLU_') || criticalSet.has(name); }
+    function toggleCriticalOnly(v){ markerCriticalOnly = !!v; renderMarkers(); }
+    function pushMarker(m){
+      markerBuf.push({
+        name: m.name,
+        t0: Number(m.t0||0),
+        t1: Number(m.t1||0),
+        text: (m.text||'').slice(0,120)
+      });
+      while(markerBuf.length>50) markerBuf.shift();
+      renderMarkers();
+    }
+    function renderMarkers(){
+      const box = document.getElementById('marker-chips');
+      if (!box) return;
+      box.innerHTML = '';
+      const counts = new Map();
+      for (let i = markerBuf.length-1; i>=0; i--){
+        const m = markerBuf[i];
+        if (markerCriticalOnly && !isCritical(m.name)) continue;
+        counts.set(m.name, (counts.get(m.name)||0)+1);
+        const div = document.createElement('div');
+        const cls = m.name.startsWith('CLU_') ? 'chip clu' : (m.name.startsWith('SEM_') ? 'chip sem' : (m.name.startsWith('ATO_') ? 'chip ato' : 'chip'));
+        div.className = cls;
+        const ts = `[${m.t0.toFixed(1)}-${m.t1.toFixed(1)}]`;
+        div.innerHTML = `<b>${m.name}</b><span class=\"ts\">${ts}</span>`;
+        div.title = m.text;
+        box.appendChild(div);
+      }
+      const cbox = document.getElementById('marker-counts');
+      if (cbox){
+        cbox.innerHTML = '';
+        const arr = Array.from(counts.entries()).sort((a,b)=>b[1]-a[1]);
+        for (const [name,c] of arr){
+          const div = document.createElement('div');
+          const cls = name.startsWith('CLU_') ? 'chip clu' : (name.startsWith('SEM_') ? 'chip sem' : 'chip');
+          div.className = cls;
+          div.innerHTML = `<b>${name}</b><span class=\"ts\">x${c}</span>`;
+          cbox.appendChild(div);
+        }
+      }
+    }
+
+    function overlap(a0,a1,b0,b1){ return Math.max(0, Math.min(a1,b1) - Math.max(a0,b0)) > 0.05; }
+    function renderTranscript(){
+      const el = document.getElementById('live-transcript');
+      if (!el) return;
+      el.innerHTML = '';
+      const start = Math.max(0, liveSegs.length - 30);
+      for (let i=start;i<liveSegs.length;i++){
+        const s = liveSegs[i];
+        const row = document.createElement('div');
+        row.style.marginBottom = '8px';
+        const ts = document.createElement('div');
+        ts.className = 'muted mono';
+        ts.textContent = `[${s.t0.toFixed(1)}-${s.t1.toFixed(1)}] ${s.speaker?('['+s.speaker+'] '):''}`;
+        const txt = document.createElement('div');
+        txt.textContent = s.text;
+        const marks = document.createElement('div');
+        marks.className = 'chips';
+        // find markers overlapping this segment
+        for (let j=markerBuf.length-1;j>=0;j--){
+          const m = markerBuf[j];
+          if (overlap(s.t0,s.t1,m.t0,m.t1)){
+            const chip = document.createElement('div');
+            const cls = m.name.startsWith('CLU_') ? 'chip clu' : (m.name.startsWith('SEM_') ? 'chip sem' : (m.name.startsWith('ATO_') ? 'chip ato' : 'chip'));
+            chip.className = cls;
+            chip.textContent = m.name;
+            marks.appendChild(chip);
+          }
+        }
+        row.appendChild(ts); row.appendChild(txt); row.appendChild(marks);
+        el.appendChild(row);
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Serapi Transcriber</h1>
+    <small>I1 — Offline</small>
+  </header>
+  <main>
+    <section id="health"><div class="card">Lade Status…</div></section>
+
+    <section class="card">
+      <h3>Browser‑Aufnahme</h3>
+      <div class="row" style="margin-bottom:8px">
+        <button id="rec-btn" class="btn ok" onclick="toggleRecord()">Aufnahme starten</button>
+        <span id="rec-status" class="mono" style="margin-left:8px">idle</span>
+        <span style="margin-left:16px">Level:</span>
+        <div style="width:180px;height:10px;background:#13202c;border:1px solid #223;border-radius:4px;overflow:hidden"><div id="meter" style="height:100%;width:0;background:#5cc8ff"></div></div>
+      </div>
+      <small>Erzeugt automatisch eine Session und streamt dein Mikrofon im Browser (lokal).</small>
+    </section>
+
+    <section class="card">
+      <h3>Session starten</h3>
+      <form class="row" onsubmit="startSession(event)">
+        <label>Sprache:
+          <select id="lang">
+            <option value="auto">auto</option>
+            <option value="de">de</option>
+            <option value="en">en</option>
+          </select>
+        </label>
+        <button class="btn ok" type="submit">Start</button>
+      </form>
+      <small>Audio-Streaming erfolgt per WebSocket-Client (z.B. tools/ws_sender.py)</small>
+    </section>
+
+    <section class="card">
+      <h3>Sessions</h3>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Lang</th><th>Segmente</th><th>Aktionen</th></tr>
+        </thead>
+        <tbody id="sessions-body"></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h3>Live‑Events</h3>
+      <div class="row" style="margin-bottom:8px">
+        <input id="live-sid" class="mono" placeholder="session_id" style="min-width:380px;padding:6px 8px;border-radius:6px;border:1px solid #223;background:#0b0f14;color:#e8eef4" />
+        <button class="btn ok" onclick="manualConnect()">Connect</button>
+        <button class="btn warn" onclick="disconnectLive()">Disconnect</button>
+        <button class="btn" onclick="clearLog()">Clear</button>
+      </div>
+      <pre id="live-log" style="max-height:240px; overflow:auto; background:#0a0e13; padding:10px; border:1px solid #223; border-radius:6px"></pre>
+    </section>
+
+    <section class="card">
+      <h3>Live‑Transkript</h3>
+      <div id="live-transcript"></div>
+    </section>
+
+    <section class="card">
+      <h3>Marker</h3>
+      <div class="row" style="margin-bottom:8px">
+        <label class="row" style="gap:6px"><input id="crit-only" type="checkbox" onchange="toggleCriticalOnly(this.checked)" />
+          <span class="muted">nur kritische</span></label>
+        <span class="muted">| Counts:</span>
+        <div id="marker-counts" class="chips"></div>
+      </div>
+      <div id="marker-chips" class="chips"></div>
+    </section>
+
+    <section id="stats"></section>
+  </main>
+</body>
+</html>

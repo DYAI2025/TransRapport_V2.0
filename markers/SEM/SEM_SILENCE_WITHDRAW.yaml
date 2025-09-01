@@ -1,0 +1,29 @@
+id: SEM_SILENCE_WITHDRAWAL
+lang: en
+category: SEMANTIC
+description: 'Communicative withdrawal markers: silence/avoidance.'
+frame:
+  signal:
+  - …
+  - doesn't matter
+  - no answer
+  - later/excuse
+  concept: Loss of contact surface
+  pragmatics: Conflict suppression
+  narrative: Dodging instead of clarifying
+composed_of:
+- ATO_SILENCE
+- ATO_EXCUSE
+activation_logic: ANY 2 IN 4 messages
+scoring:
+  base: 1.2
+  weight: 0.95
+window:
+  messages: 6
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- withdrawal
+- silence

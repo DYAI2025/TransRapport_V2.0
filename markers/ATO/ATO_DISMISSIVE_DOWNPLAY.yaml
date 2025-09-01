@@ -1,0 +1,28 @@
+id: ATO_DISMISSIVE_DOWNPLAY
+version: '3.4'
+category: ATOMIC
+description: Marker für das Herunterspielen von Themen
+frame:
+  signal:
+  - downplaying after raising a topic
+  concept: topic dismissal
+  pragmatics: avoidance / de-escalation by minimization
+  narrative: turning away
+pattern:
+- (?i)ach nee, (ist|war) schon gut
+- (?i)lass (mal|das), (nicht so wichtig|ist gut)
+- (?i)egal, vergiss es
+- (?i)it's fine, forget it
+- (?i)never mind
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- downplay
+- avoidance
+- dismissal

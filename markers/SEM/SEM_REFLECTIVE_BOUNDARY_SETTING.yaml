@@ -1,0 +1,29 @@
+id: SEM_REFLECTIVE_BOUNDARY_SETTING
+lang: en
+category: SEMANTIC
+description: Distanced self-reflection combined with explicit boundary setting.
+frame:
+  signal:
+  - from the outside I see …
+  - please mirror …
+  - no advice
+  - I need distance
+  concept: Reflective self-demarcation
+  pragmatics: Controlled depth, protection
+  narrative: Self-clarification with scope
+composed_of:
+- ATO_OUTSIDE_PERSPECTIVE
+- ATO_SET_BOUNDARY
+activation_logic: ALL WITHIN 3 messages
+scoring:
+  base: 1.3
+  weight: 1.0
+window:
+  messages: 6
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- reflection
+- boundaries

@@ -1,0 +1,31 @@
+id: SEM_SELF_CRITICISM_SPIRAL
+lang: de
+category: SEMANTIC
+description: Erfasst eine sich selbst verstärkende Schleife aus negativer Selbstzuschreibung
+  und resignativer Finalität, die auf eine verfestigte Denkstruktur hindeutet.
+frame:
+  signal:
+  - Kombination aus negativer Selbstzuschreibung und verallgemeinernder Resignation
+  concept: Selbstkritische Abwärtsspirale
+  pragmatics: Signalisiert erlernte Hilflosigkeit, sucht implizit nach Widerspruch
+    oder Bestätigung des negativen Selbstbildes.
+  narrative: trap / loop
+composed_of:
+- ATO_SELF_ATTRIBUTION_NEGATIVE
+- ATO_RESIGNATION_FINAL
+activation:
+  rule: ALL in 1 message OR ANY 2 in 3 messages
+scoring:
+  base: 1.6
+  weight: 1.2
+  formula: logistic
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- self-criticism
+- resignation
+- loop
+- v3.3-compliant
+schema_version: '3.3'

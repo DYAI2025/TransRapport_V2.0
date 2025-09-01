@@ -1,0 +1,27 @@
+id: ATO_HESITATION_VOICE
+version: '3.4'
+category: ATOMIC
+description: Marker für stimmliche Unsicherheit und Zögern
+frame:
+  signal:
+  - filled pauses
+  - vocal hesitation
+  concept: speaker uncertainty
+  pragmatics: reduced commitment / searching for words
+  narrative: stall
+pattern:
+- (?i)\b(äh|um|uh|hm|erm|ähm)\b
+- (?i)\b(i mean|like,? )
+- (?i)\b(sort of|kind of)\b
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- hesitation
+- voice
+- uncertainty

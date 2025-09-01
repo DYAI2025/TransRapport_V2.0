@@ -1,0 +1,33 @@
+id: SEM_APPEAL_TO_AUTHORITY
+lang: de
+category: SEMANTIC
+description: Erkennt rhetorische Muster, bei denen Autoritäten, Experten oder Institutionen
+  als Quelle für eine Aussage genannt werden, um deren Gültigkeit oder Überzeugungskraft
+  zu erhöhen.
+frame:
+  signal:
+  - Laut einer Studie
+  - Wie Dr. Weber in seiner Forschung gezeigt hat
+  - Die WHO hat deutlich gemacht
+  - Der Minister betonte
+  - Experten warnen
+  - wissenschaftlichen Studien
+  concept: Appeal to Authority
+  pragmatics: Verstärkung der Aussage durch Berufung auf Autoritäten
+  narrative: Argumentationsmuster
+composed_of:
+- ATO_APPEAL_TO_AUTHORITY_STUDY
+- ATO_APPEAL_TO_AUTHORITY_EXPERT
+activation_logic: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- appeal_to_authority
+metadata:
+  repair_log:
+  - R00-R06 applied, auto-generated, 2025-08-07

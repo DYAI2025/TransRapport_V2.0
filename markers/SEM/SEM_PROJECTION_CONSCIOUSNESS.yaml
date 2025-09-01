@@ -1,0 +1,22 @@
+id: SEM_PROJECTION_CONSCIOUSNESS
+version: '3.3'
+frame:
+  signal:
+  - Bewusstes Erkennen eigener Projektionen
+  concept: Projektionsbewusstsein
+  pragmatics: Psychodynamische Klarheit
+  narrative: awareness
+composed_of:
+- ATO_PROJECTION_AWARENESS
+- ATO_SELF_OBSERVATION
+activation:
+  rule: ALL 2 IN 2 messages
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- projektion
+- bewusstsein
+- psychodynamik
+schema_version: '3.3'

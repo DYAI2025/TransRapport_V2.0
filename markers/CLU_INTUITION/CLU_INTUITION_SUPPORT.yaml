@@ -1,0 +1,34 @@
+id: CLU_INTUITION_SUPPORT
+category: CLU_INTUITION
+schema_version: "3.4"
+lang: de
+frame:
+  signal: ["intuition","verbundenheit","wärme"]
+  concept: "Vorahnung: Unterstützung/Verbundenheit"
+  pragmatics: "Ressourcen stärken, Kontakt vertiefen"
+  narrative: "hypothesis"
+tags: [intuition, support, verbundenheit, wärme]
+examples:
+  positive:
+    - "Ich habe das Gefühl, dass zwischen euch gerade etwas Gutes entsteht."
+    - "Es fühlt sich an, als wärt ihr auf einer Wellenlänge."
+    - "Ich spüre, dass dir das gerade gut tut."
+    - "Ich nehme Wärme und Verbundenheit wahr."
+    - "Mein Eindruck ist, dass Vertrauen wächst."
+    - "Es klingt so, als würdet ihr euch gegenseitig tragen."
+    - "Hier entsteht gerade Sicherheit."
+    - "Das wirkt nach echter Unterstützung."
+    - "Ich spüre eine weiche, wohlwollende Haltung."
+    - "Da ist Nähe und Zugewandtheit."
+  negative:
+    - "Es wäre schön, wenn wir uns besser verstehen."  # Wunsch/Zukunft, nicht beobachtete Intuition
+    - "Wir sollten uns unterstützen."  # Imperativ statt gespürter Zustand
+    - "Ich hoffe auf mehr Nähe."  # Hoffnung statt Wahrnehmung
+    - "Vielleicht können wir zusammenhalten."  # Hypothetisch, unkonkret
+    - "Man könnte Vertrauen aufbauen."  # Vorschlag, nicht Wahrnehmung
+    - "Bitte unterstützen Sie mich."  # Bitte/Bitteformel
+    - "Unterstützung ist wichtig."  # Allgemeine Aussage
+    - "Wir arbeiten zusammen."  # Faktisch, keine gefühlte Qualität
+    - "Das Team hilft."  # Objektive Feststellung
+    - "Ich will dich unterstützen."  # Absicht, nicht gespürte Verbundenheit
+

@@ -1,0 +1,38 @@
+id: MEMA_DESTRUCTIVE_CONFLICT_DYNAMICS_MARKER
+frame:
+  signal: ["Meta-Syndrom aus indirekter Konfliktvermeidung", "Dominanzmuster", "destruktive Beziehungsstruktur"]
+  concept: "Destruktive Konfliktdynamik"
+  pragmatics: "Meta-Analyse von destruktiven Konfliktmustern"
+  narrative: "Systemische Erkennung hochriskanter Beziehungsdynamiken"
+composed_of:
+  - CLU_SUSPICIOUS_BEHAVIOR
+  - CLU_PSYCHOLOGICAL_DIGITAL_MANIPULATION
+  - SEM_AGGRESSIVE_BEHAVIOR
+activation:
+  rule: "ANY 2 IN 3 messages"
+examples:
+  - "Person A feuert binnen zwei Tagen sieben passive Aggressions-Marker, Person B reagiert defensiv → Cluster aktiv, Meta löst aus."
+  - "Dauerhaft destruktive Kritik und Machtbeschlüsse von A → Dominance-Pattern aktiv → Meta meldet hochriskante Dynamik."
+  - "Wechsel: Schuldumkehr-Schleife + Abwertung, dann Schweigen → beide Cluster aktiv, Meta >1."
+  - "Chat-Analyse zeigt 4 Guilt-Twists, 3 Unilateral Decisions im Fenster → Meta."
+  - "Sprint-Retro eskaliert: Attack, Withdrawal, Power Play – offene Diskussion unmöglich → Meta."
+  - "A kritisiert B ständig, B zieht sich zurück → über Tage eskaliert es zu Schweigen."
+  - "Schuldumkehr folgt auf Angriff, wiederholt in jeder Diskussion."
+  - "Passive Aggression von A, defensive Reaktion von B, Muster über Wochen."
+  - "Dominanzentscheidungen ohne Diskussion, kumuliert zu Beziehungsbruch."
+  - "Guilt-Trips und Abwertungen in schneller Folge während eines Streits."
+  - "Withdrawal nach Attack, wiederholt in monatlichen Konflikten."
+  - "Machtspiel und Manipulation, aufbauend über mehrere Interaktionen."
+  - "Eskalation von Kritik zu Stonewalling innerhalb eines Abends."
+  - "Destruktive Schleife: Angriff - Verteidigung - Rückzug, wöchentlich."
+  - "Systematische Unterdrückung durch Dominanz, sichtbar über Monate."
+  - "Über Monate hinweg wiederholen sich Muster von Schuldzuweisung und emotionaler Erpressung, die jede Annäherung verhindern."
+  - "Die Kommunikation ist seit Jahren von passiver Aggression und plötzlichem Rückzug geprägt, was zu einer chronischen Distanz führt."
+  - "Jeder Versuch, Konflikte anzusprechen, endet in einer Eskalation von Kritik und Verachtung, die sich über Wochen hinzieht."
+  - "Die Beziehung ist durch eine ständige Abfolge von Machtkämpfen und Manipulationen gekennzeichnet, die sich über Jahre manifestiert haben."
+  - "Es gibt ein wiederkehrendes Muster, bei dem ein Partner den anderen abwertet und der andere in eine defensive Haltung verfällt, was sich über alle Interaktionen erstreckt."
+  - "Die Dynamik ist seit Beginn der Beziehung von einem Kreislauf aus Vorwürfen, Rechtfertigungen und Schweigen bestimmt, der sich immer wiederholt."
+  - "Über einen längeren Zeitraum hinweg zeigt sich eine Tendenz zur emotionalen Invalidierung und zum Gaslighting, was das Vertrauen nachhaltig zerstört."
+  - "Die Interaktionen sind durch eine subtile, aber konstante Abwertung und das Ignorieren von Bedürfnissen gekennzeichnet, was sich über alle Lebensbereiche erstreckt."
+  - "Es besteht ein tief verwurzeltes Muster von ungelösten Konflikten, die immer wieder aufbrechen und die Beziehung chronisch belasten."
+  - "Die Kommunikation ist seit langem von einer Mischung aus Sarkasmus, Zynismus und emotionaler Distanz geprägt, die eine echte Verbindung unmöglich macht."

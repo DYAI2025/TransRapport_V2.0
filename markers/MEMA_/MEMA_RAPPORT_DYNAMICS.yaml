@@ -1,0 +1,63 @@
+id: MEMA_RAPPORT_DYNAMICS
+version: "3.4"
+category: META
+description: "Session-level Rapport-Zustand Zusammenfassung"
+frame:
+  signal: ["balance of alliance vs. rupture clusters"]
+  concept: "session-level rapport state"
+  pragmatics: "documentation of relational quality"
+  narrative: "state summary"
+composed_of:
+  - CLU_RAPPORT_BUILDING
+  - CLU_RUPTURE_TENSION
+  - CLU_AVOIDED_DISCLOSURE
+activation:
+  rule: "EVALUATE within session: CLU_RAPPORT_BUILDING vs (CLU_RUPTURE_TENSION + CLU_AVOIDED_DISCLOSURE)"
+scoring:
+  weight: 1.6
+examples:
+  - "Rapport > Rupture → 'working alliance' dominant."
+  - "Rupture + Avoided Disclosure > Rapport → 'strained alliance'."
+  - "Shift während der Stunde: Anfang angespannt, Ende kooperativ."
+  - "Konstante Misalignment-Cues trotz Validierung."
+  - "We-language + Disclosure drehten die Balance positiv."
+  - "Downplay-Schleifen dominierten, wenig Antworten auf offene Fragen."
+  - "Stagnation reduzierte sich nach gezielter Spiegelung."
+  - "Strong alliance established early, maintained throughout session."
+  - "Initial resistance gave way to collaborative exploration."
+  - "Therapeutic rupture successfully repaired mid-session."
+  - "Consistent avoidance patterns despite multiple repair attempts."
+  - "Patient engagement fluctuated but ended on positive note."
+  - "Trust building evident through increasing disclosure depth."
+  - "Session characterized by productive therapeutic tension."
+  - "Alliance strengthened through skillful navigation of difficult topics."
+  - "Breakthrough moment shifted entire relational dynamic."
+  - "Persistent withdrawal signals need for different therapeutic approach."
+  - "Balanced session with both challenge and support present."
+  - "Rapport building efforts yielded measurable patient openness."
+  - "Alliance building markers outweighed rupture indicators throughout session."
+  - "Patient showed increasing engagement as therapeutic safety increased."
+  - "Rupture patterns emerged early but were successfully addressed."
+  - "Collaborative language dominated session despite initial resistance."
+  - "Disclosure frequency increased following validation interventions."
+  - "Therapeutic alliance strengthened through consistent attunement."
+  - "Patient withdrawal decreased as rapport building moves accumulated."
+  - "Session dynamics shifted from tension to cooperation mid-therapy."
+  - "Avoidance behaviors were replaced by active participation."
+  - "Rapport indicators showed steady improvement over session time."
+  - "Therapeutic connection deepened through reciprocal validation."
+  - "Patient demonstrated growing trust through vulnerability sharing."
+  - "Alliance markers consistently exceeded rupture signals."
+  - "Session ended with stronger therapeutic bond than it began."
+  - "Patient engagement transformed from passive to collaborative."
+  - "Rapport building successfully countered initial therapeutic rupture."
+  - "Consistent therapeutic presence led to measurable trust development."
+  - "Session dynamics reflected successful alliance formation."
+  - "Patient showed increased openness following rapport interventions."
+  - "Therapeutic relationship strengthened through mutual understanding."
+  - "Alliance building patterns dominated despite challenging content."
+  - "Session transformed from defensive distance to collaborative partnership"
+  - "Therapeutic bond evolved from fragile connection to resilient alliance"
+  - "Patient's engagement shifted from withdrawn resistance to active participation"
+  - "Rapport trajectory showed steady improvement throughout therapeutic encounter"
+tags: [meta, rapport, session_state, documentation]

@@ -1,0 +1,55 @@
+id: SEM_REALITY_DISTORTION_FIELD
+version: '3.3'
+frame:
+  signal:
+  - Graduelle Veränderung geteilter Realität
+  concept: Linguistische Realitätsverzerrungsfelder
+  pragmatics: Kontrolle durch Realitätskonstruktion
+  narrative: gaslighting_progression
+gaslighting_progression:
+  stage_1_slight_modification:
+    markers:
+    - vielleicht
+    - ungefähr
+    - sowas wie
+    - etwa
+    - irgendwie
+    description: Erste subtile Veränderungen
+  stage_2_alternative_interpretation:
+    markers:
+    - du hast verstanden
+    - war klar dass
+    - offensichtlich
+    - natürlich
+    description: Umdeutung der ursprünglichen Bedeutung
+  stage_3_complete_revision:
+    markers:
+    - nie gesagt
+    - immer gemeint
+    - habe ich erklärt
+    - wir haben besprochen
+    description: Vollständige Realitätsrevision
+activation:
+  rule: PROGRESSION DETECTED
+window:
+  messages: 50
+  temporal_window: 7d
+scoring:
+  base: 3.3
+  weight: 0.93
+  decay: 0.005
+  formula: logistic
+psychological_indicators:
+- gaslighting
+- narcissistic_reality_construction
+- control_through_confusion
+- reality_revision
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- gaslighting
+- reality_distortion
+- manipulation
+schema_version: '3.3'

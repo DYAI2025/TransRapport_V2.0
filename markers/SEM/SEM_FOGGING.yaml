@@ -1,0 +1,24 @@
+id: SEM_FOGGING
+frame:
+  signal:
+  - ich weiß selbst nicht mehr
+  - alles ist irgendwie kompliziert
+  - es ist schwer zu erklären
+  - nichts ist so eindeutig
+  - es ist alles so verworren
+  concept: Fogging
+  pragmatics: Unklarheit und Ausweichen
+  narrative: Nebel-Taktik
+composed_of:
+- ATO_FOGGING
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- fogging
+- confusion

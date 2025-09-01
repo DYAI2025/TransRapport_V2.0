@@ -1,0 +1,24 @@
+id: SEM_PROCESS_STRUCTURE
+frame:
+  signal:
+  - erstens
+  - nächster punkt
+  - zusammenfassend
+  - abschließend
+  - schritt für schritt
+  concept: Ablaufstruktur
+  pragmatics: Meta-Kommunikation
+  narrative: Strukturierung
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- meta_communication
+- structuring

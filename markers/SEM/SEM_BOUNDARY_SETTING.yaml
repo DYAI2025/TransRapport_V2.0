@@ -1,0 +1,36 @@
+id: SEM_BOUNDARY_SETTING
+schema_version: LD-3.3
+lang: en
+category: SEMANTIC
+description: Semantic pattern for healthy boundary setting
+frame:
+  signal:
+  - limit establishment
+  concept: Boundary Setting
+  pragmatics: micro pattern recognition
+  narrative: intent
+composed_of:
+- ATO_BOUNDARY_SETTING
+- ATO_EMOTIONAL_REGULATION
+- ATO_SELF_REFLECTION
+activation_logic: ANY 2
+window:
+  messages: 2
+examples:
+  positive: []
+  negative: []
+negative:
+- Vielleicht sollten wir später reden.
+- Ich weiß nicht, ob das okay ist.
+- Man könnte es so oder so sehen.
+- Ich fühle mich unwohl, aber mach du mal.
+- Ich möchte nicht, aber gut…
+- I guess it's fine.
+- Könnten wir vielleicht?
+- Ich wäre eventuell dafür.
+- Das passt mir nicht so, aber na gut.
+- Mal schauen, wie es wird.
+tags:
+- semantic
+- v3.4
+- boundaries

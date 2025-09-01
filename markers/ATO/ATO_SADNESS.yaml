@@ -1,0 +1,22 @@
+id: ATO_SADNESS
+frame:
+  signal:
+  - traurig
+  - ich weine
+  - niedergeschlagen
+  - melancholisch
+  - leer
+  - deprimiert
+  - down
+  concept: Traurigkeit
+  pragmatics: negative Valenz
+  narrative: Emotionsausdruck
+pattern:
+- (?i)\b(traurig|ich weine|niedergeschlagen|melancholisch|leer|deprimiert|down)\b
+activation:
+  rule: ANY 1
+examples:
+  positive: []
+  negative: []
+tags:
+- sadness

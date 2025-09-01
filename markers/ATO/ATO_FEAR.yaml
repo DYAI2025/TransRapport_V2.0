@@ -1,0 +1,25 @@
+id: ATO_FEAR
+frame:
+  signal: Wörter und Phrasen, die Angst, Furcht oder Sorge ausdrücken.
+  concept: Angst / Furcht
+  pragmatics: Ausdruck von Unsicherheit, Warnung, Hilfesuchverhalten.
+  narrative: threat_perception
+pattern:
+- (?i)\bangst\b
+- (?i)fürchte
+- (?i)schiss
+- (?i)besorgt
+- (?i)bammel
+- (?i)panik
+- (?i)beängstigend
+- (?i)furcht
+- (?i)sorgen machen
+examples:
+  positive: []
+  negative: []
+tags:
+- emotion
+- fear
+- negative
+- concern
+- anxiety

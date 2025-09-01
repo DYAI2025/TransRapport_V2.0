@@ -1,0 +1,26 @@
+id: SEM_RAPPORT_SUPPORT_MOVE
+version: '3.4'
+category: SEMANTIC
+description: Unterstützende Interventions-Triade des Therapeuten
+frame:
+  signal:
+  - open question + reflection + validation (therapist)
+  concept: supportive intervention triad
+  pragmatics: trust building & exploration
+  narrative: guided openness
+composed_of:
+- ATO_OPEN_QUESTION_THERAPIST
+- ATO_REFLECTIVE_STATEMENT_THERAPIST
+- ATO_VALIDATION_THERAPIST
+activation:
+  rule: COUNT(ATO_OPEN_QUESTION_THERAPIST)>=1 AND COUNT(ATO_REFLECTIVE_STATEMENT_THERAPIST)>=1
+    AND COUNT(ATO_VALIDATION_THERAPIST)>=1 IN 5
+scoring:
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- rapport_building
+- therapist_move

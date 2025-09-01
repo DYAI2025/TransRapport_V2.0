@@ -1,0 +1,25 @@
+id: ATO_IMPOSTER_FEELING
+version: '3.3'
+frame:
+  signal:
+  - nicht verdient
+  - Hochstapler
+  - auffliegen könnte
+  concept: Hochstapler-Syndrom
+  pragmatics: Selbstzweifel
+  narrative: impostor
+pattern:
+- (?i)\b(nicht verdient|unverdient)\b
+- (?i)\b(hochstapler|betrüger.?gefühl)\b
+- (?i)\b(auffliegen|entlarvt.?werden)\b
+- (?i)\b(nur.{0,10}glück|zufall)\b
+- (?i)\b(nicht.{0,10}gut.?genug)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- imposter
+- selbstzweifel
+- beruf
+schema_version: '3.3'

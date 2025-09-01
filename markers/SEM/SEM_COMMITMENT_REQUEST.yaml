@@ -1,0 +1,33 @@
+id: SEM_COMMITMENT_REQUEST
+version: '3.3'
+lang: de
+level: SEM
+frame:
+  signal:
+  - klare Absprache/Verbindlichkeit erbitten
+  concept: Commitment-Rahmen
+  pragmatics: Überraschungen vermeiden
+  narrative: Planbarkeit/Respekt
+pattern:
+- (?i)\b(absprache|vereinbarung|abmachung)\b
+- (?i)\b(verbindlich(keit)?|verlässlich(keit)?)\b
+- (?i)\b(wenn\s+wir\s+uns\s+trennen)\s+und\s+wieder\s+daten\b
+- (?i)\b(sag(en)?\s+wir\s+es\s+einander)\b
+examples:
+  positive: []
+  negative: []
+negative:
+- Vielleicht klappt es morgen.
+- Mal sehen, wie es wird.
+- Ich versuche es, aber ohne Garantie.
+- Ich melde mich irgendwann.
+- Schauen wir mal, ob wir Zeit finden.
+- I'd like to, but I'm not sure.
+- We could think about it.
+- Unverbindlich können wir drüber sprechen.
+- Ich möchte erstmal nur darüber nachdenken.
+- Es wäre schön, aber ich verspreche nichts.
+tags:
+- commitment
+- clarity
+- semantics

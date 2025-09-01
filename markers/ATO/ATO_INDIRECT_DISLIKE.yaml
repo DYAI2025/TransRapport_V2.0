@@ -1,0 +1,23 @@
+id: ATO_INDIRECT_DISLIKE
+frame:
+  signal:
+  - interessant
+  - na toll
+  - och nee
+  - ach wirklich
+  - wie originell
+  concept: indirekte Abneigung
+  pragmatics: Missfallen andeuten
+  narrative: versteckte Kritik
+pattern:
+- (?i)\binteressant\b
+- (?i)\bna toll\b
+- (?i)\boch nee\b
+activation:
+  rule: ANY 1
+examples:
+  positive: []
+  negative: []
+tags:
+- dislike
+- indirect

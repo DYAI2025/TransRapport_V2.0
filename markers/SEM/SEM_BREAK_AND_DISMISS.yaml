@@ -1,0 +1,25 @@
+id: SEM_BREAK_AND_DISMISS
+version: '3.4'
+category: SEMANTIC
+description: Semantischer Marker für Beginn mit sofortigem Herunterspielen
+frame:
+  signal:
+  - start + immediate downplay
+  concept: approach-avoid sequence
+  pragmatics: inhibition/shame avoidance
+  narrative: step-in, step-out
+composed_of:
+- ATO_VOICE_MICRO_BREAK
+- ATO_DISMISSIVE_DOWNPLAY
+activation:
+  rule: ATO_VOICE_MICRO_BREAK AND ATO_DISMISSIVE_DOWNPLAY IN 3 messages
+scoring:
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- inhibition
+- dismissal
+- rapport_signal

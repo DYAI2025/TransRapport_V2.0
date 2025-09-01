@@ -1,0 +1,19 @@
+{
+  "checked_files": 1,
+  "issues": [
+    {
+      "file": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/markers/NEG_EXAMPLES.yaml",
+      "id": null,
+      "issues": [
+        "missing id",
+        "no pattern/frame/examples/composed_of found"
+      ]
+    }
+  ],
+  "missing_atomic_refs": {},
+  "summary": {
+    "total_files": 1,
+    "files_with_issues": 1,
+    "files_missing_atomic_refs": 0
+  }
+}

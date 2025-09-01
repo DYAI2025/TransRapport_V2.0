@@ -1,0 +1,25 @@
+id: SEM_VALIDATED_DISCLOSURE
+version: '3.4'
+category: SEMANTIC
+description: Validierung gefolgt von Selbstoffenbarung
+frame:
+  signal:
+  - validation followed by disclosure
+  concept: safety enables openness
+  pragmatics: progress marker
+  narrative: opening
+composed_of:
+- ATO_VALIDATION_THERAPIST
+- ATO_DISCLOSURE_STATEMENT
+activation:
+  rule: ATO_VALIDATION_THERAPIST BEFORE ATO_DISCLOSURE_STATEMENT WITHIN 5
+scoring:
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- disclosure
+- safety
+- rapport_signal

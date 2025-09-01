@@ -1,0 +1,27 @@
+id: ATO_VOICE_MICRO_BREAK
+version: '3.4'
+category: ATOMIC
+description: Marker für Selbstunterbrechung und abgebrochene Sätze
+frame:
+  signal:
+  - incomplete sentence
+  - sudden cut-off
+  concept: self-interruption
+  pragmatics: inhibition / shame cue
+  narrative: halt
+pattern:
+- (…$)
+- (—$)
+- \b(aber|but)\s*…$
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- voice
+- interruption
+- inhibition

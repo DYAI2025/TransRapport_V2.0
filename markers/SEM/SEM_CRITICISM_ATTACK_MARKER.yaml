@@ -1,0 +1,35 @@
+id: SEM_CRITICISM_PERSONAL_ATTACK
+lang: de
+category: SEMANTIC
+description: Erfasst Ad-hominem-Kritik, die den Charakter oder die Persönlichkeit
+  einer Person angreift, anstatt sich auf ein spezifisches Verhalten zu beziehen.
+  Folgt Gottman's Konzept der 'Criticism'.
+frame:
+  signal:
+  - Kombination aus direkter Anschuldigung (z.B. 'Du bist...') und einer generalisierenden,
+    negativen Charaktereigenschaft.
+  concept: 'Persönlicher Angriff (Gottman: Criticism)'
+  pragmatics: Eskalationspotenzial, dient der Abwertung des Gegenübers, verhindert
+    konstruktive Konfliktlösung.
+  narrative: accusation / character assassination
+composed_of:
+- ATO_DIRECT_ACCUSATION
+- ATO_NEGATIVE_JUDGEMENT
+activation:
+  rule: ALL in 1 message
+scoring:
+  base: 1.8
+  weight: 1.3
+  formula: logistic
+examples:
+  positive: []
+  negative: []
+semantische_grabber_id: AUTO_SEM_20250718_944A
+metadata:
+  created_at: 2025-07-18 02:36:13.580894
+  created_by: FRAUSAR_GUI_v2
+  version: 1.0
+  tags:
+  - neu_erstellt
+  - needs_review
+kategorie: UNCATEGORIZED

@@ -1,0 +1,26 @@
+id: ATO_CLARIFICATION_REQUEST
+version: '3.4'
+category: ATOMIC
+description: Marker für Verständnisfragen und Klärungsanfragen
+frame:
+  signal:
+  - clarifying request
+  concept: ensure shared meaning
+  pragmatics: repair / alignment
+  narrative: check
+pattern:
+- (?i)meinen sie damit\??|do you mean\??
+- (?i)k(ö|oe)nnen sie das konkretisieren\??|can you be more specific\??
+- (?i)habe ich sie richtig verstanden\??|did i get that right\??
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- alignment
+- repair
+- therapist_move

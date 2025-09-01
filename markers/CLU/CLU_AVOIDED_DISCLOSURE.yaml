@@ -1,0 +1,29 @@
+id: CLU_AVOIDED_DISCLOSURE
+version: '3.4'
+category: CLUSTER
+description: Systematische Vermeidung von Aussagen
+frame:
+  signal:
+  - start + downplay + silence repeats
+  concept: systematic avoidance of saying
+  pragmatics: blocked engagement
+  narrative: retreat loop
+composed_of:
+- SEM_BREAK_AND_DISMISS
+- ATO_OFFENDED_SILENCE
+- ATO_HESITATION_VOICE
+activation:
+  rule: COUNT(SEM_BREAK_AND_DISMISS)+COUNT(ATO_OFFENDED_SILENCE)+COUNT(ATO_HESITATION_VOICE)
+    >= 3 IN 20
+  window:
+    messages: 20
+scoring:
+  weight: 1.4
+examples:
+  positive: []
+  negative: []
+tags:
+- cluster
+- avoidance
+- inhibition
+- disclosure_block

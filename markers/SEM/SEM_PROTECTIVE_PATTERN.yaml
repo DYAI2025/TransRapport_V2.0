@@ -1,0 +1,22 @@
+id: SEM_PROTECTIVE_PATTERN
+version: '3.3'
+frame:
+  signal:
+  - Erkanntes Schutzmuster
+  concept: Bewusster Selbstschutz
+  pragmatics: Abgrenzungsstrategie
+  narrative: boundary
+composed_of:
+- ATO_PROTECTIVE_DISTANCING
+- ATO_PATTERN_RECOGNITION
+activation:
+  rule: ALL 2 IN 3 messages
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- schutz
+- muster
+- abgrenzung
+schema_version: '3.3'

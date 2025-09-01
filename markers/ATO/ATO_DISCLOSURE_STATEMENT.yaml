@@ -1,0 +1,28 @@
+id: ATO_DISCLOSURE_STATEMENT
+version: '3.4'
+category: ATOMIC
+description: Marker für persönliche Offenbarungen und Selbstoffenlegung
+frame:
+  signal:
+  - new personal information
+  - self-disclosure
+  concept: opening up
+  pragmatics: rapport / trust indicator
+  narrative: reveal
+pattern:
+- (?i)ich habe niemandem gesagt|i haven't told anyone
+- (?i)zum ersten mal sage ich|for the first time i'm saying
+- (?i)ich traue mich kaum zu sagen|i hardly dare to say
+- (?i)ehrlich gesagt|honestly,
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- disclosure
+- openness
+- rapport_signal

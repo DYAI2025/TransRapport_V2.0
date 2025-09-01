@@ -1,0 +1,21 @@
+id: SEM_SOFT_REJECTION
+frame:
+  signal:
+  - Schwierigkeit + Kontaktversprechen
+  concept: Indirekte Absage
+  pragmatics: Face-saving rejection
+  narrative: soft_rejection
+composed_of:
+- ATO_UFF_DIFFICULT
+- ATO_WILL_CONTACT
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.4
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- soft_rejection
+- face_saving

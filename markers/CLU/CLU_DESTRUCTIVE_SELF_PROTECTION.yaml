@@ -1,0 +1,29 @@
+id: CLU_DESTRUCTIVE_SELF_PROTECTION
+lang: en
+category: CLUSTER
+description: 'Destructive self-protection: blame shifting + minimization (optionally
+  gaslighting) in short succession.'
+frame:
+  signal:
+  - '''because of you'' + ''no big deal'' in series'
+  concept: Defensive spiral
+  pragmatics: Responsibility evasion, trust erosion
+  narrative: Protection script over clarity
+composed_of:
+- SEM_BLAME_SHIFTING
+- SEM_MINIMIZATION
+activation_logic: SUM(weight)≥0.7 WITHIN 48h
+scoring:
+  base: 1.8
+  weight: 1.3
+  decay: 0.02
+window:
+  messages: 15
+examples:
+  positive: []
+  negative: []
+tags:
+- needs_review
+- cluster
+- defense
+- blame_shift

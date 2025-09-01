@@ -1,0 +1,22 @@
+id: SEM_EMOTIONAL_COMPLEXITY
+version: '3.3'
+frame:
+  signal:
+  - Differenzierte Gefühlswahrnehmung mit Selbstbeobachtung
+  concept: Emotionale Komplexität
+  pragmatics: Gefühlsdifferenzierung
+  narrative: complexity
+composed_of:
+- ATO_EMOTIONAL_GRANULARITY
+- ATO_SELF_OBSERVATION
+activation:
+  rule: ALL 2 IN 2 messages
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- emotion
+- komplexität
+- differenzierung
+schema_version: '3.3'

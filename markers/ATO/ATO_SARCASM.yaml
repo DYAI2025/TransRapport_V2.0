@@ -1,0 +1,20 @@
+id: ATO_SARCASM
+schema_version: LD-3.3
+lang: en
+category: ATOMIC
+description: Atomic pattern for sarcastic expressions
+frame:
+  signal:
+  - sarcasm
+  concept: Sarcastic expression signal
+  pragmatics: lexical indicator
+  narrative: surface
+pattern:
+- (?i)\b(really|sure|obviously|great|wonderful|perfect)\b.*[.!?]
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- v3.3
+- auto-generated

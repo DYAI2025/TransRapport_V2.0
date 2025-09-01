@@ -1,0 +1,26 @@
+id: EMO_MELANCHOLIC_TONE
+lang: de
+category: SEMANTIC
+description: Leichte Wehmut, verpackt in eine überwiegend positive Aussage.
+frame:
+  signal:
+  - ein bisschen schade
+  - leicht wehmütig
+  - schön, aber irgendwie traurig
+  concept: Melancholische Färbung
+  pragmatics: Gefühlstiefe trotz positiver Botschaft
+  narrative: sanfte Nostalgie
+composed_of:
+- ATO_POSITIVE_STATEMENT
+- ATO_MILD_SADNESS
+activation_logic: ANY 2 IN 3 messages
+scoring:
+  base: 1.4
+  weight: 1.1
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- emotional
+- melancholic

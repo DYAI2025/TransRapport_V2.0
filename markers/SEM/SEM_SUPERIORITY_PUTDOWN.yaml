@@ -1,0 +1,21 @@
+id: SEM_SUPERIORITY_PUTDOWN
+frame:
+  signal:
+  - Überlegenheits-Frame (Target)
+  concept: Spott/Putdown
+  pragmatics: Aggressiver Humor
+  narrative: jab_chain
+composed_of:
+- ATO_PUTDOWN_TEMPLATE
+- ATO_SARCASM_CUES
+activation:
+  rule: ANY 2 IN 3 messages
+examples:
+  positive: []
+  negative: []
+tags:
+- humor
+- superiority
+- target
+- semantics
+- v33

@@ -1,0 +1,28 @@
+id: SEM_DOUBLE_BIND_DISCLAIMER_BUT
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Disclaimer direkt gefolgt von Kontrast-Knick
+  concept: Doppelbotschaft (Disclaimer→aber)
+  pragmatics: Weich + Belastung
+  narrative: guilt_neediness_bind
+composed_of:
+- ATO_DISCLAIMER_NOT_BURDEN
+- ATO_CONTRASTIVE_CONNECTOR_ABER
+activation:
+  rule: ANY 1 IN 25 messages
+window:
+  messages: 25
+scoring:
+  base: 2.8
+  weight: 0.8
+  decay: 0.01
+  formula: logistic
+examples:
+  positive: []
+  negative: []
+tags:
+- sem
+- double_bind
+- guilt_pressure

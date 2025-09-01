@@ -1,0 +1,16 @@
+id: ATO_SELF_RELIANCE_EARLY_MARKER
+frame:
+  signal:
+  - brauche Abstand
+  - muss allein
+  - keine Zeit
+  concept: Vermeidende Bindung
+  pragmatics: Distanz schaffen
+  narrative: withdrawal
+pattern:
+- (?i)\\bhabe\ ich\\b
+examples:
+  positive: []
+  negative: []
+tags:
+- attachment

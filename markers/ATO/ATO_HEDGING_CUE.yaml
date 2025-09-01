@@ -1,0 +1,23 @@
+id: ATO_HEDGING_CUE
+schema_version: LD-3.3
+lang: de
+category: ATOMIC
+description: Atomic pattern for hedging and uncertainty expressions
+frame:
+  signal:
+  - Unsicherheitsformel
+  concept: Hedging
+  pragmatics: Abschwächung
+  narrative: token
+pattern:
+- vielleicht
+- wohl
+- glaube
+- unsicher
+- weiß nicht
+examples:
+  positive: []
+  negative: []
+tags:
+- hedging
+- atomic

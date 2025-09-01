@@ -1,0 +1,26 @@
+id: ACT_CONTEXT_EXPLANATION
+lang: de
+category: SEMANTIC
+description: Erklärung für eine verspätete Antwort.
+frame:
+  signal:
+  - war beschäftigt
+  - hatte keine Zeit
+  - bin nicht zum Antworten gekommen
+  concept: Begründung für Verzögerung
+  pragmatics: Wahrung der Beziehung durch Kontextgabe
+  narrative: rechtfertigung
+composed_of:
+- ATO_DELAY_REASON
+- ATO_RESPONSE_REFERENCE
+activation_logic: ANY 2 IN 3 messages
+scoring:
+  base: 1.4
+  weight: 1.1
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- action
+- explanation

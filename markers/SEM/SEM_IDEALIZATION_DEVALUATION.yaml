@@ -1,0 +1,29 @@
+id: SEM_IDEALIZATION_DEVALUATION
+frame:
+  frame:
+    signal:
+    - du bist das Beste
+    - niemand auf der Welt
+    - nie machst du
+    - so egoistisch
+    - wertlos
+    concept: idealization-devaluation
+    pragmatics: Spaltung
+    narrative: instabile Beziehung
+  signal:
+  - '[Signal placeholder]'
+  concept: '[Concept placeholder]'
+  pragmatics: '[Pragmatics placeholder]'
+  narrative: '[Narrative placeholder]'
+detect_class: DetectSplitting
+activation:
+  rule: ANY 1
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- splitting
+- unstable_relationship

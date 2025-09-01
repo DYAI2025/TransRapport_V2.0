@@ -1,0 +1,24 @@
+id: ATO_EMO_HIGH_VALENCE
+lang: en
+category: ATOMIC
+description: Fires when a dedicated emotion detector (e.g., DetectEmotionValence)
+  classifies an utterance with a valence score >= 0.6, indicating a strongly positive
+  emotion.
+frame:
+  signal:
+  - Strongly positive emotional language
+  concept: High Valence Emotion
+  pragmatics: Expressing joy, excitement, or strong satisfaction.
+  narrative: token / peak positive
+detect_class: DetectEmotionValence
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- emotion
+- valence
+- detector-driven
+- token
+- v3.3-compliant
+schema_version: '3.3'

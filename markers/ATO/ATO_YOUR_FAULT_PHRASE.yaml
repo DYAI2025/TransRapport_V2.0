@@ -1,0 +1,26 @@
+id: ATO_YOUR_FAULT_PHRASE
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Schuldzuschreibung
+  concept: Es ist deine Schuld
+  pragmatics: Opfer-Täter-Umkehr
+  narrative: reversal
+pattern:
+- (?i)\b(das ist (deine|eure) schuld|du bist schuld daran)\b
+activation:
+  rule: ANY 1 IN 25 messages
+window:
+  messages: 25
+scoring:
+  base: 2.5
+  weight: 0.7
+  decay: 0.01
+  formula: logistic
+examples:
+  positive: []
+  negative: []
+tags:
+- ato
+- blame

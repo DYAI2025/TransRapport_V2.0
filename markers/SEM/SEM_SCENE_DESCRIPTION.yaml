@@ -1,0 +1,26 @@
+id: EMO_SCENE_DESCRIPTION
+lang: de
+category: SEMANTIC
+description: Beschreibung einer Umgebung oder Szene mit emotionalem Unterton.
+frame:
+  signal:
+  - es riecht nach
+  - der Himmel ist
+  - umgeben von
+  concept: Emotional gefärbte Szenerie
+  pragmatics: Transport von Stimmung über Umgebung
+  narrative: stimmungsbild
+composed_of:
+- ATO_SCENE_ELEMENT
+- ATO_EMOTIONAL_TONE
+activation_logic: ANY 2 IN 3 messages
+scoring:
+  base: 1.4
+  weight: 1.1
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- emotional
+- description

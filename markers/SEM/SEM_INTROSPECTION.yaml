@@ -1,0 +1,24 @@
+id: SEM_INTROSPECTION
+frame:
+  signal:
+  - I wonder
+  - upon reflection
+  - I realized
+  - I have noticed
+  - I question
+  concept: introspection
+  pragmatics: self-reflection
+  narrative: inner exploration
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- introspection
+- self_reflection

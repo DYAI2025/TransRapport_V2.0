@@ -1,0 +1,34 @@
+id: CLU_INTUITION_GRIEF
+category: CLU_INTUITION
+schema_version: "3.4"
+lang: de
+frame:
+  signal: ["intuition","trauer","verlust"]
+  concept: "Vorahnung: Trauer/Abschied"
+  pragmatics: "Raum geben, Tempo drosseln, halten"
+  narrative: "hypothesis"
+tags: [intuition, grief, trauer, verlust]
+examples:
+  positive:
+    - "Ich nehme Trauer wahr."
+    - "Es fühlt sich nach Abschiedsschmerz an."
+    - "Ich spüre Verlust und Wehmut."
+    - "Da ist eine stille, schwere Traurigkeit."
+    - "Es klingt nach ungelöster Trauer."
+    - "Ich höre einen Kloß im Hals."
+    - "Ich spüre ein Nachzittern von Schmerz."
+    - "Da ist eine leise Klage im Hintergrund."
+    - "Ich nehme Betroffenheit und Zerbrechlichkeit wahr."
+    - "Es wirkt, als würdest du um etwas trauern."
+  negative:
+    - "Trauer ist ein Thema."  # Allgemeinplatz
+    - "Manchmal ist man traurig."  # Generische Aussage
+    - "Das war schwierig."  # Unbestimmt
+    - "Ich bin ok."  # Abwiegeln, keine Trauerqualität
+    - "Vielleicht ist es schade."  # Vage
+    - "Wir machen weiter."  # Aktivierung statt Trauerraum
+    - "Es ist, wie es ist."  # Resignation ohne Trauerqualität
+    - "Das ist normal."  # Normalisierung
+    - "Ich will nicht daran denken."  # Abwehr/Vermeidung
+    - "Ich will stark sein."  # Abgrenzung statt Trauer
+

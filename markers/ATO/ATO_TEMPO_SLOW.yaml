@@ -1,0 +1,22 @@
+id: ATO_TEMPO_SLOW
+schema_version: LD-3.3
+lang: de
+category: ATOMIC
+description: Atomic pattern for slow speech tempo
+frame:
+  signal:
+  - WPM ≪ Baseline
+  concept: langsam
+  pragmatics: Tempo
+  narrative: audio
+detect_class:
+  module: prosody.tempo
+  params:
+    delta_pct_max: -20
+examples:
+  positive: []
+  negative: []
+tags:
+- tempo
+- audio
+- atomic

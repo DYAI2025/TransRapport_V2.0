@@ -1,0 +1,14 @@
+id: ATO_SLANG_TOKEN
+frame:
+  signal:
+  - Slang-Ausdruck
+  concept: Umgangssprache
+  pragmatics: informelle Kommunikation
+  narrative: token
+pattern:
+- (?i)\b(krass|geil|chillig|alter|digga|safe|läuft|nice|yolo|swag)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- slang

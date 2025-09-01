@@ -1,0 +1,28 @@
+id: SEM_GUILT_APPEAL_NEEDINESS
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Schuldappell + Abhängigkeit
+  concept: Guilt-Appeal (Neediness)
+  pragmatics: Nähe erzwingen
+  narrative: guilt_neediness_bind
+composed_of:
+- ATO_GUILT_APPEAL_SUPPORT
+- ATO_HELPLESSNESS_DEPENDENCY
+activation:
+  rule: ANY 1 IN 25 messages
+window:
+  messages: 25
+scoring:
+  base: 2.9
+  weight: 0.8
+  decay: 0.01
+  formula: logistic
+examples:
+  positive: []
+  negative: []
+tags:
+- sem
+- guilt
+- neediness

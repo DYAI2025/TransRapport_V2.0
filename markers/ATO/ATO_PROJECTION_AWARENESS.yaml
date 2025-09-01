@@ -1,0 +1,24 @@
+id: ATO_PROJECTION_AWARENESS
+version: '3.3'
+frame:
+  signal:
+  - ich projiziere
+  - übertrage ich
+  - spiegelt sich
+  concept: Projektionsbewusstsein
+  pragmatics: Psychodynamische Einsicht
+  narrative: insight
+pattern:
+- (?i)\b(ich projiziere|projiziere ich)\b
+- (?i)\b(übertrage ich|ich übertrage)\b
+- (?i)\b(spiegelt sich|sich spiegelt)\b
+- (?i)\b(mein eigenes thema|meine eigene)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- projektion
+- psychodynamik
+- awareness
+schema_version: '3.3'

@@ -1,0 +1,28 @@
+id: ATO_REFLECTIVE_STATEMENT_THERAPIST
+version: '3.4'
+category: ATOMIC
+description: Marker für reflektierende Aussagen des Therapeuten
+frame:
+  signal:
+  - you-statement paraphrase
+  - mirroring content/affect
+  concept: reflection of meaning/feeling
+  pragmatics: validation & alignment
+  narrative: mirror
+pattern:
+- (?i)es klingt, als ob|it sounds like
+- (?i)sie wirken|you seem
+- (?i)wenn ich sie richtig verstehe|if I understand you
+- (?i)sie sagen, dass|you're saying that
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- therapist_move
+- reflection
+- validation

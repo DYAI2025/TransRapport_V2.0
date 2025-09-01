@@ -1,0 +1,25 @@
+id: SEM_MISALIGNMENT_CUE
+version: '3.4'
+category: SEMANTIC
+description: Therapeut lädt ein, Patient zieht sich zurück
+frame:
+  signal:
+  - therapist invites, patient withdraws
+  concept: small rupture/misalignment
+  pragmatics: repair opportunity
+  narrative: pull-push
+composed_of:
+- ATO_OPEN_QUESTION_THERAPIST
+- ATO_OFFENDED_SILENCE
+activation:
+  rule: ATO_OPEN_QUESTION_THERAPIST AND ATO_OFFENDED_SILENCE IN 2
+scoring:
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- rupture
+- misalignment
+- repair

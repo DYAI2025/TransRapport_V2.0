@@ -1,0 +1,29 @@
+id: ATO_UNCLEAR_INTENTION
+frame:
+  signal:
+  - ich blick da nicht durch
+  - keine Ahnung, was hier abgeht
+  - ich verstehe gar nicht
+  - alles wirkt so nebulös
+  - ich kriege keinen klaren Eindruck
+  - ich check’s nicht
+  - ich hab keinen Plan
+  - mir fehlt der Durchblick
+  - das ist mir zu schwammig
+  - was soll ich daraus schließen
+  concept: unklare Absicht
+  pragmatics: absichtliche Verschleierung
+  narrative: Täuschung
+pattern:
+- (?i)\b(ich blick da nicht durch|keine Ahnung, was hier abgeht|ich verstehe gar nicht|alles
+  wirkt so nebulös|ich kriege keinen klaren Eindruck|ich check(?:'|e)?s nicht|ich
+  hab keinen Plan|mir fehlt der Durchblick|das ist mir zu schwammig|was soll ich daraus
+  schließen)\b
+activation:
+  rule: ANY 1
+examples:
+  positive: []
+  negative: []
+tags:
+- concealment
+- confusion

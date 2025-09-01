@@ -1,0 +1,18 @@
+id: SEM_DOUBT_UNCERTAINTY
+frame:
+  signal:
+  - Zweifel und Unsicherheit
+  - Infragestellung von Entscheidungen
+  concept: Ausdrücke von Zweifel und Unsicherheit
+  pragmatics: Signalisiert Zögern und Infragestellung
+  narrative: Selbstzweifel und Entscheidungsunsicherheit
+composed_of:
+- ATO_UNSICHER
+- ATO_ZWEIFEL
+- ATO_BEDENKEN
+activation:
+  rule: ANY_OF
+  threshold: 1
+examples:
+  positive: []
+  negative: []

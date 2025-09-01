@@ -1,0 +1,21 @@
+id: SEM_STRESS_EXCUSE
+frame:
+  signal:
+  - Stress + temporale Vagheit
+  concept: Stress-basierte Ausrede
+  pragmatics: Höfliche Ablehnung
+  narrative: polite_decline
+composed_of:
+- ATO_VOLL_STRESS
+- ATO_MUSS_SCHAUEN
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.3
+  weight: 1.1
+examples:
+  positive: []
+  negative: []
+tags:
+- avoidance_strategy
+- stress_excuse

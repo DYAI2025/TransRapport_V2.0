@@ -1,0 +1,29 @@
+id: ATO_OFFENDED_SILENCE
+version: '3.4'
+category: ATOMIC
+description: Marker für beleidigte Stille und Rückzug
+frame:
+  signal:
+  - one-word or silent reply
+  - nonverbal withdrawal
+  concept: withdrawal instead of engagement
+  pragmatics: conflict avoidance / tension cue
+  narrative: retreat
+pattern:
+- ^\.{3}$
+- ^(mhm|aha|hm)\.?$
+- ^k\.?$
+- ^ja\.?$
+- \*wendet sich ab\*|\*turns away\*
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- silence
+- withdrawal
+- rapport_signal

@@ -1,0 +1,34 @@
+id: CLU_INTUITION_COMMITMENT
+category: CLU_INTUITION
+schema_version: "3.4"
+lang: de
+frame:
+  signal: ["intuition","verbindlichkeit","entscheidung"]
+  concept: "Vorahnung: Commitment/Verbindlichkeit"
+  pragmatics: "Zusage klären, Verantwortung halten"
+  narrative: "hypothesis"
+tags: [intuition, commitment, verbindlichkeit, entscheidung]
+examples:
+  positive:
+    - "Ich spüre Bereitschaft, sich fest zu legen."
+    - "Es fühlt sich verbindlich an."
+    - "Ich nehme einen klaren Entschluss wahr."
+    - "Das klingt nach einem echten Commitment."
+    - "Da ist Wille, Verantwortung zu übernehmen."
+    - "Ich spüre, dass du dich darauf einlassen willst."
+    - "Es wirkt entschieden und tragfähig."
+    - "Ich nehme Verbindlichkeit in deinen Worten wahr."
+    - "Da ist ein Ja mit Konsequenz."
+    - "Es klingt so, als wolltest du dazu stehen."
+  negative:
+    - "Vielleicht mache ich das."  # Unverbindlich
+    - "Ich denke darüber nach."  # Kein Entschluss
+    - "Wir können das mal versuchen."  # Probehandeln statt Commitment
+    - "Eventuell später."  # Aufschub
+    - "Ich werde sehen."  # Unklar
+    - "Ich verspreche nichts."  # Nicht-Verbindlichkeit
+    - "Wir sprechen noch darüber."  # Keine Entscheidung
+    - "Das ist eine Option."  # Möglichkeit statt Bindung
+    - "Mal schauen."  # Vage
+    - "Ich wünsche mir Verbindlichkeit."  # Wunsch, nicht Zustand
+

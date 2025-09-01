@@ -1,0 +1,21 @@
+paths:
+  data_root: "./data/sessions"
+  whisper_model_dir: "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/whisperTurboCT2"
+  # Marker-Pfad: falls Marker in Nachbar-Repo liegen, z.B. ../markers_repo/markers
+  markers_root: "./markers"
+
+bundle:
+  default: "SerapiCore_1.0.yaml"   # liegt in ./bundles
+
+runtime:
+  language_default: null            # "de" | "en" | null (auto)
+  window_seconds: 25
+  sample_rate: 16000
+  offline_only: true
+diarization:
+  ecapa_tau: 0.25
+  stickiness_delta: 0.03
+  min_turn_sec: 0.6
+  vad_energy_db: -35
+  min_voiced_ms: 250
+  momentum: 0.15

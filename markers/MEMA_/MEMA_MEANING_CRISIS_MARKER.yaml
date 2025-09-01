@@ -1,0 +1,43 @@
+id: MEMA_MEANING_CRISIS_MARKER
+frame:
+  signal:
+  - Existenzielle Leerheitsindikatoren
+  concept: Existenzielle Leere
+  pragmatics: Sinnverlustausdruck
+  narrative: sinnkrise
+composed_of:
+- CLU_INNER_EMPTINESS_MARKER
+- CLU_PURPOSE_LOSS_PATTERN
+activation:
+  rule: ANY 2 IN 30 messages
+scoring:
+  base: 2.0
+  weight: 1.5
+examples:
+- Ich frage mich immer öfter, ob irgendwas davon wirklich zählt.
+- Es ist, als hätte alles seinen Wert verloren – ich spüre nichts mehr.
+- Ich hab keine Ziele mehr. Keine Ahnung, was ich will, wofür ich hier bin.
+- Ich mach Dinge, aber es fühlt sich an, als wär ich gar nicht wirklich da.
+- Nichts ergibt Sinn gerade, ich hab das Gefühl, ich treibe nur so dahin.
+- Ich bin umgeben von Menschen, aber innerlich komplett allein.
+- Selbst Sachen, die mir früher Freude gemacht haben, fühlen sich gerade nur noch
+  leer an.
+- 'Ich wache auf, bin müde und frage mich einfach: Wozu das alles?'
+- Die Arbeit stapelt sich, aber ehrlich? Es ist mir völlig egal, ob ich was erledige
+  oder nicht.
+- Heute lag ich fast eine Stunde im Bett und hab mich gefragt, wozu ich überhaupt
+  aufstehen soll.
+  - "Alles fühlt sich so leer an, als hätte das Leben seinen Sinn verloren."
+  - "Ich frage mich täglich, wozu das alles gut ist, nichts motiviert mich mehr."
+  - "Seit Monaten spüre ich nur noch diese innere Leere, kein Ziel in Sicht."
+  - "Das Leben kommt mir vor wie ein endloser Kreislauf ohne Bedeutung."
+  - "Ich fühle mich verloren, als ob nichts mehr zählt oder Sinn ergibt."
+  - "Jeder Tag ist gleich, voller Zweifel am Sinn des Ganzen."
+  - "Die Leere in mir wächst, ich sehe keinen Zweck in meinen Handlungen."
+  - "Wofür lebe ich eigentlich? Diese Frage quält mich ständig."
+  - "Alles wirkt sinnlos, ich treibe nur dahin ohne Richtung."
+  - "In letzter Zeit dominiert diese Sinnlosigkeit mein Denken komplett."
+tags:
+- existential
+- meaning_loss
+- crisis

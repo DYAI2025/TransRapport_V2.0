@@ -1,0 +1,29 @@
+id: CLU_RUPTURE_TENSION
+version: '3.4'
+category: CLUSTER
+description: Fehlabstimmungs-Signale, Patt und Rückzug
+frame:
+  signal:
+  - misalignment signals, stalemate, withdrawal
+  concept: micro-rupture / heightened tension
+  pragmatics: need for repair
+  narrative: strain
+composed_of:
+- SEM_MISALIGNMENT_CUE
+- SEM_UNRESOLVED_ISSUE
+- ATO_OFFENDED_SILENCE
+activation:
+  rule: COUNT(SEM_MISALIGNMENT_CUE)+COUNT(SEM_UNRESOLVED_ISSUE)+COUNT(ATO_OFFENDED_SILENCE)
+    >= 3 IN 20
+  window:
+    messages: 20
+scoring:
+  weight: 1.4
+examples:
+  positive: []
+  negative: []
+tags:
+- cluster
+- rupture
+- tension
+- misalignment

@@ -1,0 +1,23 @@
+id: SEM_DRAMA_TRIANGLE
+frame:
+  signal:
+  - Verfolger
+  - Opfer
+  - Retter
+  - Rollenwechsel
+  - Dramaspiel
+  concept: drama triangle
+  pragmatics: role rotation
+  narrative: dysfunctional interaction
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- drama_triangle

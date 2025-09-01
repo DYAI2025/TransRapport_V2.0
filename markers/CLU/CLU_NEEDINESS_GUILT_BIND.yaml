@@ -1,0 +1,31 @@
+id: CLU_NEEDINESS_GUILT_BIND
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Bedürftigkeit + moralischer Druck in Kombination
+  concept: Subtil-manipulative Bedürftigkeitskommunikation
+  pragmatics: Schuldinduzierte Bindung
+  narrative: guilt_neediness_bind
+composed_of:
+- SEM_DOUBLE_BIND_DISCLAIMER_BUT
+- SEM_PERFORMATIVE_HELPLESSNESS
+- SEM_MORAL_REFRAMING_GOOD_INTENT
+- SEM_VICTIM_OFFENDER_REVERSAL
+- SEM_GUILT_APPEAL_NEEDINESS
+activation:
+  rule: AT_LEAST 2 DISTINCT SEM IN 30 messages
+window:
+  messages: 30
+scoring:
+  base: 3.0
+  weight: 0.9
+  decay: 0.0
+  formula: linear
+examples:
+  positive: []
+  negative: []
+tags:
+- cluster
+- guilt_pressure
+- escalation

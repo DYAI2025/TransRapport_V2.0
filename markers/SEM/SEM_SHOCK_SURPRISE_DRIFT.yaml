@@ -1,0 +1,24 @@
+id: SEM_SHOCK_SURPRISE_DRIFT
+frame:
+  signal:
+  - shock
+  - surprise
+  - startle
+  - abrupt reaction
+  concept: shock-surprise drift
+  pragmatics: highlight unexpected shifts
+  narrative: sudden transition
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- shock
+- surprise
+- drift

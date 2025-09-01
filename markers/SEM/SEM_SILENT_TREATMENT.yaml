@@ -1,0 +1,23 @@
+id: SEM_SILENT_TREATMENT
+frame:
+  signal:
+  - no response
+  - ignoring
+  - walling off
+  - silence
+  concept: silent treatment
+  pragmatics: passive-aggressive punishment
+  narrative: relationship maneuver
+composed_of:
+- ATO_PLACEHOLDER
+activation:
+  rule: ALL 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- silent_treatment
+- passive_aggressive

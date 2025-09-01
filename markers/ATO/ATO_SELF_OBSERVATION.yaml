@@ -1,0 +1,23 @@
+id: ATO_SELF_OBSERVATION
+version: '3.3'
+frame:
+  signal:
+  - ich merke
+  - mir fällt auf
+  - ich beobachte an mir
+  concept: Selbstwahrnehmung
+  pragmatics: Metakognitive Reflexion
+  narrative: awareness
+pattern:
+- (?i)\b(ich merke|mir fällt auf|ich beobachte)\b
+- (?i)\b(ich erkenne an mir|ich nehme wahr)\b
+- (?i)\b(mir wird (gerade )?klar)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- selbstwahrnehmung
+- metakognition
+- introspection
+schema_version: '3.3'

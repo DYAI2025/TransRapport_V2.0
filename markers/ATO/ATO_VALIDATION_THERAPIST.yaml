@@ -1,0 +1,27 @@
+id: ATO_VALIDATION_THERAPIST
+version: '3.4'
+category: ATOMIC
+description: Marker für Validierung durch den Therapeuten
+frame:
+  signal:
+  - explicit validation/normalization
+  concept: legitimizing the experience
+  pragmatics: safety / trust
+  narrative: permission
+pattern:
+- (?i)das ist nachvollziehbar|that makes sense
+- (?i)danke f(ü|u)r das teilen|thanks for sharing
+- (?i)es ist okay, so zu f(ü|u)hlen|it's okay to feel that
+- (?i)das w(ä|ae)re f(ü|u)r viele schwer|many would find this hard
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- therapist_move
+- validation
+- safety

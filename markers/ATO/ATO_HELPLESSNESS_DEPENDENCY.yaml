@@ -1,0 +1,27 @@
+id: ATO_HELPLESSNESS_DEPENDENCY
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Hilflosigkeit + Abhängigkeit
+  concept: Ohne dich geht es nicht
+  pragmatics: Caregiver-Zwang
+  narrative: neediness
+pattern:
+- (?i)\b(ohne dich (schaffe|kann) ich das nicht|ich kann das nicht allein|ohne dich
+  geht es nicht|ich schaffe das nicht)\b
+activation:
+  rule: ANY 1 IN 30 messages
+window:
+  messages: 30
+scoring:
+  base: 2.3
+  weight: 0.7
+  decay: 0.01
+  formula: logistic
+examples:
+  positive: []
+  negative: []
+tags:
+- ato
+- neediness

@@ -1,0 +1,22 @@
+id: ATO_SARCASM_SUBTILE
+frame:
+  signal:
+  - oh, großartig
+  - ja klar
+  - klasse, wirklich toll
+  - wie erfrischend
+  - ganz im ernst
+  concept: subtiler Sarkasmus
+  pragmatics: ironische Kritik
+  narrative: versteckte Anschuldigung
+pattern:
+- (?i)\boh, großartig\b
+- (?i)\bja klar\b
+activation:
+  rule: ANY 1
+examples:
+  positive: []
+  negative: []
+tags:
+- sarcasm
+- irony

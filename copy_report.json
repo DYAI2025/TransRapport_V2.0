@@ -1,0 +1,244 @@
+{
+  "source": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0",
+  "dest": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker",
+  "copied": [
+    {
+      "marker": "ATO_PAUSE_MICRO",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_PAUSE_MICRO.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_PAUSE_MICRO.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_PAUSE_MICRO.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_PAUSE_MICRO.yaml"
+    },
+    {
+      "marker": "ATO_PAUSE_LONG",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_PAUSE_LONG.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_PAUSE_LONG.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_PAUSE_LONG.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_PAUSE_LONG.yaml"
+    },
+    {
+      "marker": "ATO_RISING_INTONATION",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_RISING_INTONATION.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_RISING_INTONATION.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_RISING_INTONATION.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_RISING_INTONATION.yaml"
+    },
+    {
+      "marker": "ATO_TEMPO_SLOW",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_TEMPO_SLOW.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_TEMPO_SLOW.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_TEMPO_SLOW.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_TEMPO_SLOW.yaml"
+    },
+    {
+      "marker": "ATO_TEMPO_FAST",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_TEMPO_FAST.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_TEMPO_FAST.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_TEMPO_FAST.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_TEMPO_FAST.yaml"
+    },
+    {
+      "marker": "ATO_LAUGHTER_EVENT",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_LAUGHTER_EVENT.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_LAUGHTER_EVENT.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_LAUGHTER_EVENT.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_LAUGHTER_EVENT.yaml"
+    },
+    {
+      "marker": "ATO_HEDGING_CUE",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_HEDGING_CUE.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_HEDGING_CUE.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_HEDGING_CUE.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_HEDGING_CUE.yaml"
+    },
+    {
+      "marker": "ATO_EMOTIONAL_INVALIDATION",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_EMOTIONAL_INVALIDATION 2.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_EMOTIONAL_INVALIDATION.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/ATO_EMOTIONAL_INVALIDATION 2.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/ATO/ATO_EMOTIONAL_INVALIDATION.yaml"
+    },
+    {
+      "marker": "SEM_VALIDATION_SEEKING",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/SEM_VALIDATION_SEEKING.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/SEM/SEM_VALIDATION_SEEKING.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/SEM_VALIDATION_SEEKING.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/SEM/SEM_VALIDATION_SEEKING.yaml"
+    },
+    {
+      "marker": "SEM_BOUNDARY_SETTING",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/SEM_BOUNDARY_SETTING.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/SEM/SEM_BOUNDARY_SETTING.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/SEM_BOUNDARY_SETTING.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/SEM/SEM_BOUNDARY_SETTING.yaml"
+    },
+    {
+      "marker": "CLU_EMOTIONAL_SUPPORT",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/CLU_EMOTIONAL_SUPPORT.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/CLU/CLU_EMOTIONAL_SUPPORT.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/CLU_EMOTIONAL_SUPPORT.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/CLU/CLU_EMOTIONAL_SUPPORT.yaml"
+    },
+    {
+      "marker": "CLU_GOTTMAN_TOXICITY_CLUSTER",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/CLU_GOTTMAN_TOXICITY_CLUSTER.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/CLU/CLU_GOTTMAN_TOXICITY_CLUSTER.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/CLU_GOTTMAN_TOXICITY_CLUSTER.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/CLU/CLU_GOTTMAN_TOXICITY_CLUSTER.yaml"
+    },
+    {
+      "marker": "CLU_INTUITION_UNCERTAINTY",
+      "from": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/CLU_INTUITION_UNCERTAINTY.yaml",
+      "to": "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/CLU_INTUITION/CLU_INTUITION_UNCERTAINTY.yaml",
+      "msg": "copied: /Users/benjaminpoersch/Projekte/XEXPERIMENTE/LD3.4_Marker_5.0/Marker_5.0/CLU_INTUITION_UNCERTAINTY.yaml -> /Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/TransRa._Marker/CLU_INTUITION/CLU_INTUITION_UNCERTAINTY.yaml"
+    }
+  ],
+  "skipped": [],
+  "missing": [
+    {
+      "marker": "ATO_SIGH",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_LONG_RESPONSE_GAP",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_OFFENDED_SILENCE",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_DISMISSIVE_DOWNPLAY",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_VOICE_MICRO_BREAK",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_HESITATION_VOICE",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_CLARIFICATION_REQUEST",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_DISCLOSURE_STATEMENT",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_VALIDATION_THERAPIST",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_REFLECTIVE_STATEMENT_THERAPIST",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_OPEN_QUESTION_THERAPIST",
+      "family": "ATO"
+    },
+    {
+      "marker": "ATO_WE_LANGUAGE",
+      "family": "ATO"
+    },
+    {
+      "marker": "SEM_VALIDATION_OF_FEELING",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_REFLECTIVE_BOUNDARY_SETTING",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_SHARED_GOAL_FRAMING",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_COMMITMENT_REQUEST",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_SOFT_COMMITMENT_MARKER",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_DOUBT_UNCERTAINTY",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_GUILT_FRAMING",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_BLAME_SHIFTING",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_UNRESOLVED_ISSUE",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_JOINT_PLANNING",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_MISALIGNMENT_CUE",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_VALIDATED_DISCLOSURE",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_RAPPORT_SUPPORT_MOVE",
+      "family": "SEM"
+    },
+    {
+      "marker": "SEM_BREAK_AND_DISMISS",
+      "family": "SEM"
+    },
+    {
+      "marker": "CLU_GROWING_CONNECTION_CLUSTER",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_INDIRECT_CONFLICT_AVOIDANCE",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_DEFENSIVE_RETREAT",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_PROCRASTINATION_LOOP",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_NEEDINESS_GUILT_BIND",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_MISUNDERSTANDING_AUDIO",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_AVOIDED_DISCLOSURE",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_RUPTURE_TENSION",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_RAPPORT_BUILDING",
+      "family": "CLU"
+    },
+    {
+      "marker": "CLU_INTUITION_SUPPORT",
+      "family": "CLU_INTUITION"
+    },
+    {
+      "marker": "CLU_INTUITION_CONFLICT",
+      "family": "CLU_INTUITION"
+    },
+    {
+      "marker": "CLU_INTUITION_COMMITMENT",
+      "family": "CLU_INTUITION"
+    },
+    {
+      "marker": "CLU_INTUITION_GRIEF",
+      "family": "CLU_INTUITION"
+    }
+  ],
+  "duplicates": []
+}

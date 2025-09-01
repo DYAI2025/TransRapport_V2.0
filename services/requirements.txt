@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+websockets
+pydantic>=2
+numpy
+soundfile
+ctranslate2==4.* ; sys_platform != 'darwin'
+faster-whisper
+PyYAML
+librosa
+openai>=1.40.0
+python-docx
+reportlab

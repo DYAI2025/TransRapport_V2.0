@@ -1,0 +1,28 @@
+id: SEM_UNRESOLVED_ISSUE
+version: '3.4'
+category: SEMANTIC
+description: Patt-Sprache und Lösungslosigkeit
+frame:
+  signal:
+  - stalemate language
+  - no-solution talk
+  concept: discussion stuck
+  pragmatics: frustration / risk of dropout
+  narrative: stagnation
+pattern:
+- (?i)drehen .* im kreis|round in circles
+- (?i)kommen .* nicht weiter|not getting anywhere
+- (?i)keine l(ö|oe)sung|no solution
+- (?i)f(ü|u)hrt zu nichts|leads to nothing
+- (?i)stecken fest|stuck
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- stagnation
+- rupture_risk

@@ -1,0 +1,21 @@
+id: ATO_VALIDATE_AND_BOUNDARY
+version: '3.3'
+lang: de
+frame:
+  signal:
+  - Gefühl anerkennen + eigene Grenze klar benennen
+  concept: Würdigen & begrenzen
+  pragmatics: Verbindung halten, Überforderung vermeiden
+  narrative: Respekt in beide Richtungen
+pattern:
+- (?i)\bich\s+verstehe\s+dich\b.*\b(und|aber)\b.*\b(meine\s+grenze|ich\s+brauche\s+abstand)\b
+- (?i)\bich\s+höre\s+dich\b.*\b(und|aber)\b.*\b(keine\s+kraft|zu\s+viel)\b
+- (?i)\bes\s+tut\s+mir\s+leid\b.*\b(und|aber)\b.*\b(ich\s+ziehe\s+eine\s+grenze)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- validation
+- boundary
+- atomic
+class: ATO_VALIDATE_AND_BOUNDARY

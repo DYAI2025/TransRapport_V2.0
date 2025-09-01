@@ -1,0 +1,55 @@
+id: MEMA_DISSOCIATIVE_COMPARTMENTALIZATION
+version: "3.3"
+frame:
+  signal: ["Abrupte emotionale Zustandswechsel ohne Übergang"]
+  concept: "Dissoziative Emotionale Kompartmentalisierung"
+  pragmatics: "Vermeidung durch emotionale Trennung"
+  narrative: "dissociative_switching"
+state_transitions:
+  from_state: "high_emotional_intensity"
+  to_state: "mundane_detachment"
+  intensity_markers: ["liebe", "brauche", "wichtig", "schmerz", "verzweifelt", "alles"]
+  detachment_markers: ["übrigens", "egal", "ok", "hmm", "whatever", "sicher"]
+  timeframe: "<24h"
+activation:
+  rule: "STATE TRANSITION DETECTED"
+window:
+  messages: 40
+  temporal_window: "24h"
+scoring:
+  base: 3.0
+  weight: 0.87
+  decay: 0.008
+  formula: "logistic"
+psychological_indicators:
+  - dissociative_defense
+  - attachment_trauma
+  - emotional_unavailability
+  - compartmentalization
+examples:
+  - "Ich liebe dich so sehr, du bedeutest mir alles → [nächster Tag] hey"
+  - "Das ist so wichtig für mich, ich brauche dich → [später] ok, egal"
+  - "Du verletzt mich so sehr → [kurz danach] Übrigens, hast du das Video gesehen?"
+  - "Ich kann ohne dich nicht leben → [nächste Nachricht] hmm"
+  - "Ich brauche dich verzweifelt → [am nächsten Morgen] Was gibt's Neues?"
+  - "Das schmerzt mich unglaublich → [eine Stunde später] Lass uns über das Wetter reden."
+  - "Du bist mein Alles → [nach 12 Stunden] Egal, vergiss es."
+  - "Ich bin am Boden zerstört → [kurz darauf] Hey, hast du Hunger?"
+  - "Diese Liebe ist intensiv → [über Nacht] Ok, tschüss."
+  - "Ich kann nicht ohne dich sein → [am selben Tag] Whatever, mach was du willst."
+  - "Der Schmerz ist überwältigend → [nach ein paar Minuten] Übrigens, neuer Film?"
+  - "Du bedeutest mir die Welt → [nächster Tag] Hmm, bin beschäftigt."
+  - "Ich fühle tiefe Trauer → [bald danach] Sicher, lass uns lachen."
+  - "Unsere Verbindung ist einzigartig → [plötzlich] Egal, ich geh schlafen."
+  - "Ich bin so wütend auf dich, ich könnte platzen! → [zwei Stunden später] Hast du schon die neue Serie gesehen?"
+  - "Ich fühle mich so allein und verlassen. → [am nächsten Morgen] Was gibt's zum Frühstück?"
+  - "Das ist der schlimmste Tag meines Lebens! → [kurz darauf] Egal, muss ja weitergehen."
+  - "Ich kann nicht glauben, dass du das getan hast, ich bin zutiefst verletzt. → [später am Tag] Apropos, wie war dein Meeting?"
+  - "Ich bin am Boden zerstört, ich sehe keinen Sinn mehr. → [ein paar Stunden später] Ich muss noch einkaufen."
+  - "Ich liebe dich über alles, du bist mein Ein und Alles. → [am nächsten Tag] Ich bin beschäftigt, melde mich später."
+  - "Ich bin so enttäuscht von dir, ich weiß nicht, wie ich damit umgehen soll. → [kurz darauf] Das Wetter ist heute schön, oder?"
+  - "Ich fühle mich so hilflos und verzweifelt. → [später] Ich muss noch die Wäsche machen."
+  - "Das ist ein Verrat, ich werde das nie vergessen! → [am nächsten Tag] Ich habe gut geschlafen."
+  - "Ich bin so glücklich mit dir, ich könnte die ganze Welt umarmen! → [ein paar Stunden später] Ich muss noch die Spülmaschine ausräumen."
+tags: [meta, dissociation, compartmentalization, attachment_trauma]
+schema_version: "3.3"

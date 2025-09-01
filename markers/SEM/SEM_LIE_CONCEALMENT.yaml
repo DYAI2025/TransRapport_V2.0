@@ -1,0 +1,15 @@
+id: SEM_LIE_CONCEALMENT
+frame:
+  signal:
+  - widersprüchliche Aussagen
+  - ausweichende Formulierungen
+  - vage Antworten
+  - Deflektion
+  concept: lie concealment
+  pragmatics: evasion
+  narrative: obfuscation
+detect_class: DetectLieConcealment
+examples:
+  positive: []
+  negative: []
+tags: []

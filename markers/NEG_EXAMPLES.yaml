@@ -1,0 +1,691 @@
+negative_examples:
+  # ATO Markers - vermeintliche Markertrigger die keine sind
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Das Wetter ist heute schön draußen."
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Ich mag Pizza sehr gerne."
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Die Uhr zeigt fünf nach drei."
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Mein Auto ist blau lackiert."
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Ich trinke gerne Kaffee morgens."
+
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Ich werde das definitiv machen."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Nein, das kommt nicht infrage."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Das ist überhaupt kein Problem."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Ich bin mir absolut sicher."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Das wird super klappen."
+
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Das war ein Fehler von mir."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Ich übernehme die Verantwortung."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Das ist meine Schuld gewesen."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Ich habe das falsch gemacht."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Das ist auf meinem Mist gewachsen."
+
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Das ist ein öffentliches Geheimnis."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Jeder weiß das schon längst."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Das steht in der Zeitung."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Das ist allgemein bekannt."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Das haben alle schon gehört."
+
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Das ist ein wichtiges Thema."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Lass uns das unbedingt besprechen."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Das sollten wir ernst nehmen."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Das ist sehr relevant."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Das müssen wir vertiefen."
+
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Das ist völlig in Ordnung so."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Ihre Gefühle sind berechtigt."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Das ist eine normale Reaktion."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Das verstehe ich vollkommen."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Das ist absolut nachvollziehbar."
+
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Ich bin dir sehr dankbar."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Das war wirklich nett von dir."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Ich schätze deine Hilfe sehr."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Vielen Dank für alles."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Das war wirklich hilfreich."
+
+  - prefix: ATO_HESITATION_VOICE
+    value: "Ich spreche ganz normal und flüssig."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Das ist vollkommen klar."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Ich weiß genau was ich sagen will."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Das kommt direkt aus dem Herzen."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Die Worte fließen ganz natürlich."
+
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Das ist eine tolle Idee!"
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Ich bin begeistert davon."
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Das gefällt mir sehr gut."
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Das ist wirklich interessant."
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Das hört sich super an."
+
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Die Antwort ist offensichtlich."
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Das ist ganz klar geregelt."
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Es gibt nur eine richtige Antwort."
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Das ist eindeutig definiert."
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Die Lösung liegt auf der Hand."
+
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Das ist Ihre persönliche Meinung."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Sie sehen das anders als ich."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Das ist Ihre Interpretation."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Sie haben da Ihre eigene Sicht."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Das ist Ihre individuelle Perspektive."
+
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Das war ein gemeinsamer Fehler."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Wir haben das zusammen verbockt."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Das ist unsere gemeinsame Schuld."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Wir beide tragen Verantwortung."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Das haben wir gemeinsam falsch gemacht."
+
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das ist überhaupt nicht nachvollziehbar."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das macht absolut keinen Sinn."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das ist völlig unverständlich."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das ist überhaupt nicht logisch."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das ist vollkommen irrational."
+
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Ich spreche in ganzen Sätzen."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Die Worte kommen flüssig heraus."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Ich beende meine Gedanken vollständig."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Alles ist klar und zusammenhängend."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Die Sätze sind komplett formuliert."
+
+  - prefix: ATO_WE_LANGUAGE
+    value: "Ich mache das alleine."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Das ist meine persönliche Aufgabe."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Ich übernehme das selbst."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Das ist mein individueller Beitrag."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Ich kümmere mich darum allein."
+
+  # CLU Markers - vermeintliche Markertrigger die keine sind
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Ich erzähle Ihnen gerne alles ganz offen."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Es gibt nichts, das ich verheimlichen würde."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Ich bin vollkommen transparent."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Alles ist für Sie zugänglich."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Ich halte nichts zurück."
+
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Wir haben überhaupt kein Vertrauen zueinander."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Die Beziehung ist sehr distanziert."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Wir arbeiten überhaupt nicht zusammen."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Es gibt keine gemeinsame Basis."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Wir haben keine Verbindung."
+
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Alles läuft perfekt harmonisch."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Es gibt keine Spannungen überhaupt."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Die Zusammenarbeit ist ideal."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Alles ist total entspannt."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Es gibt keine Konflikte."
+
+  # SEM Markers - vermeintliche Markertrigger die keine sind
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich bleibe konsequent bei meinen Themen."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich entwickle meine Gedanken vollständig."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich bleibe fokussiert auf ein Thema."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich bringe meine Ideen zu Ende."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich halte an meinen Aussagen fest."
+
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich plane alles alleine durchzuführen."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Das ist meine persönliche Entscheidung."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich mache das ohne Absprache."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Das ist mein individueller Plan."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich entscheide das selbst."
+
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Wir sind vollkommen im Einklang."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Alles ist total synchron."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Wir verstehen uns perfekt."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Es gibt keine Missverständnisse."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Wir sind auf der gleichen Wellenlänge."
+
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Ich ignoriere Ihre Gefühle komplett."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Ihre Emotionen sind mir egal."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Ich nehme keine Rücksicht."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Ihre Bedürfnisse interessieren mich nicht."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Ich bin nicht einfühlsam."
+
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Alles ist perfekt gelöst."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Es gibt keine offenen Fragen."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Alle Probleme sind behoben."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Alles ist vollständig geklärt."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Es gibt keine Unsicherheiten."
+
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Ich halte alles geheim und verschlossen."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Ich teile nichts Persönliches."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Meine Gedanken bleiben privat."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Ich öffne mich nicht."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Alles bleibt hinter verschlossenen Türen."
+
+  # META Markers - vermeintliche Markertrigger die keine sind
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Die Sitzung hat überhaupt keine Bedeutung."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Es gab keine Interaktion zwischen uns."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Die Beziehung blieb unverändert."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Es entwickelte sich nichts."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Die Sitzung war ereignislos."
+
+  # Additional Negative Examples (Creative)
+  # ATO Markers
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Können Sie das bitte wiederholen?"
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Ich habe Sie nicht verstanden."
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Sprechen Sie lauter, bitte."
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Wie spät ist es?"
+  - prefix: ATO_CLARIFICATION_REQUEST
+    value: "Ist das Ihr Ernst?"
+
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Ich werde es auf jeden Fall tun."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Darauf können Sie sich verlassen."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Ich bin zu 100% dabei."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Das ist eine feste Zusage."
+  - prefix: ATO_C_SOFT_COMMITMENT_MARKER
+    value: "Ich kann das nicht tun."
+
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Ich sehe ein, dass ich da einen Fehler gemacht habe."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Da haben Sie Recht, das hätte ich anders machen sollen."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Ich verstehe Ihre Kritik und nehme sie an."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Danke für das Feedback, ich werde darüber nachdenken."
+  - prefix: ATO_DEFENSIVENESS_SHIFT_MARKER
+    value: "Es tut mir leid, das war meine Verantwortung."
+
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Ich habe gehört, dass..."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Man erzählt sich, dass..."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Ein Freund von mir hat mir erzählt..."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Ich habe online gelesen, dass..."
+  - prefix: ATO_DISCLOSURE_STATEMENT
+    value: "Das ist eine interessante Theorie."
+
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Lassen Sie uns das genauer untersuchen."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Das ist ein sehr wichtiger Punkt, den Sie ansprechen."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Ich möchte das nicht einfach übergehen."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Das hat meine volle Aufmerksamkeit."
+  - prefix: ATO_DISMISSIVE_DOWNPLAY
+    value: "Erzählen Sie mir mehr darüber."
+
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Ich kann nachvollziehen, warum Sie so fühlen."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Ihre Gefühle sind absolut berechtigt."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Es ist okay, wütend/traurig/verwirrt zu sein."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Danke, dass Sie mir Ihre Gefühle anvertrauen."
+  - prefix: ATO_EMOTIONAL_INVALIDATION
+    value: "Das muss sich wirklich schlimm für Sie anfühlen."
+
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Ich mache das gerne für dich, ohne Erwartungen."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Du bist mir nichts schuldig."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Deine Entscheidung, ich unterstütze dich so oder so."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Mach dir keine Sorgen um mich."
+  - prefix: ATO_GUILT_TRIPPING_MARKER
+    value: "Ich schätze deine ehrliche Meinung."
+
+  - prefix: ATO_HESITATION_VOICE
+    value: "Ich bin mir da ganz sicher."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Das ist glasklar."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Ohne jeden Zweifel."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Lassen Sie es mich klar sagen..."
+  - prefix: ATO_HESITATION_VOICE
+    value: "Ich sage das mit voller Überzeugung."
+
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Das ist ein interessanter Gedanke, erzählen Sie mehr."
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Ich brauche einen Moment, um darüber nachzudenken."
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Können Sie das bitte näher erläutern?"
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Ich höre Ihnen aufmerksam zu."
+  - prefix: ATO_OFFENDED_SILENCE
+    value: "Das regt mich zum Nachdenken an."
+
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Sind Sie damit einverstanden?"
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Haben Sie das schon einmal probiert?"
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Ist das die einzige Möglichkeit?"
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Glauben Sie das wirklich?"
+  - prefix: ATO_OPEN_QUESTION_THERAPIST
+    value: "Können Sie das bestätigen?"
+
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Ich denke, Sie sollten das anders sehen."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Das ist nicht das, was wirklich passiert ist."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Haben Sie schon mal daran gedacht, dass...?"
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Meine professionelle Meinung dazu ist..."
+  - prefix: ATO_REFLECTIVE_STATEMENT_THERAPIST
+    value: "Sie interpretieren die Situation falsch."
+
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Ich frage mich, welchen Anteil ich daran hatte."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Lass uns schauen, wie wir beide dazu beigetragen haben."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Ich erkenne meine Rolle in diesem Konflikt."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Vielleicht hätten wir beide anders handeln können."
+  - prefix: ATO_S_BLAME_SHIFT_EXPRESSIONS_MARKER
+    value: "Wir sind beide für diese Situation verantwortlich."
+
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das ist eine ziemlich ungewöhnliche Reaktion."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Ich glaube, da überreagieren Sie etwas."
+    - value: "Sind Sie sicher, dass Sie sich so fühlen sollten?"
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Versuchen Sie, das rationaler zu sehen."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Das ist keine angemessene emotionale Antwort."
+  - prefix: ATO_VALIDATION_THERAPIST
+    value: "Ich kann das nicht wirklich nachvollziehen."
+
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Ich möchte Folgendes klar und deutlich sagen..."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Lassen Sie mich diesen Gedanken zu Ende führen."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Ich bin fest davon überzeugt und sage Ihnen jetzt warum."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Punkt eins ist..., Punkt zwei ist..."
+  - prefix: ATO_VOICE_MICRO_BREAK
+    value: "Meine Schlussfolgerung ist unmissverständlich."
+
+  - prefix: ATO_WE_LANGUAGE
+    value: "Das ist Ihr Problem, nicht meins."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Sie müssen das selbst herausfinden."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Ich überlasse das ganz Ihnen."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Das betrifft nur Sie."
+  - prefix: ATO_WE_LANGUAGE
+    value: "Ich sehe da keine gemeinsame Basis."
+
+  # CLU Markers
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Ich möchte Ihnen heute von etwas sehr Persönlichem erzählen."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Ich bin bereit, dieses schwierige Thema anzusprechen."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Lassen Sie uns tief in meine Ängste eintauchen."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Ich fühle mich sicher genug, um alles zu offenbaren."
+  - prefix: CLU_AVOIDED_DISCLOSURE
+    value: "Heute werde ich kein Blatt vor den Mund nehmen."
+
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Ich habe das Gefühl, wir reden aneinander vorbei."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Die Atmosphäre hier ist sehr angespannt."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Ich fühle mich heute überhaupt nicht verstanden."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Ich glaube nicht, dass Sie mir wirklich zuhören."
+  - prefix: CLU_RAPPORT_BUILDING
+    value: "Es fällt mir schwer, Ihnen zu vertrauen."
+
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Ich fühle mich heute sehr gut aufgehoben und verstanden."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Die Sitzung heute ist unglaublich produktiv."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Wir machen heute riesige Fortschritte."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Ich bin so froh, dass wir endlich darüber reden."
+  - prefix: CLU_RUPTURE_TENSION
+    value: "Die Zusammenarbeit mit Ihnen ist sehr hilfreich."
+
+  # SEM Markers
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich möchte diesen Punkt gerne vertiefen, auch wenn es unangenehm ist."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Lassen Sie uns dranbleiben, das ist wichtig."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich habe angefangen, das zu sagen, und ich möchte es auch beenden."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Ich weiche nicht aus, ich stelle mich dem Thema."
+  - prefix: SEM_BREAK_AND_DISMISS
+    value: "Auch wenn es schwerfällt, ich möchte weiterreden."
+
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich werde meinen eigenen Weg gehen."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich brauche Ihren Rat nicht, ich weiß, was zu tun ist."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Das ist meine alleinige Entscheidung."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich möchte das lieber alleine regeln."
+  - prefix: SEM_JOINT_PLANNING
+    value: "Ich habe bereits einen Plan, ohne Sie."
+
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Wie war das für Sie? — Das ist eine sehr gute Frage, ich erzähle es Ihnen."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Erzählen Sie mehr. — Gerne, also es war so..."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Was fühlen Sie dabei? — Ich fühle mich verstanden und möchte das teilen."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Wie erleben Sie das? — Danke, dass Sie fragen. Es fühlt sich so an..."
+  - prefix: SEM_MISALIGNMENT_CUE
+    value: "Können Sie das ausführen? — Ja, natürlich. Da gibt es noch mehr Details."
+
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Wie fühlen Sie sich? - Sie scheinen traurig. - Das ist doch kein Grund traurig zu sein."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Was denken Sie? - Es klingt, als wären Sie verwirrt. - Das sollten Sie aber nicht sein."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Erzählen Sie mehr. - Sie wirken wütend. - Diese Wut ist nicht angemessen."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Wie war das? - Es scheint, Sie sind enttäuscht. - Stellen Sie sich nicht so an."
+  - prefix: SEM_RAPPORT_SUPPORT_MOVE
+    value: "Was brauchen Sie? - Sie klingen hilflos. - Das ist aber Ihr Problem."
+
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Ich sehe jetzt einen klaren Weg nach vorne."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Endlich habe ich eine Lösung für dieses Problem."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Wir haben einen echten Durchbruch erzielt."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Die Dinge fügen sich endlich zusammen."
+  - prefix: SEM_UNRESOLVED_ISSUE
+    value: "Ich bin zuversichtlich, dass wir das lösen können."
+
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Das ist nachvollziehbar. — Trotzdem werde ich nichts weiter dazu sagen."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Es ist okay, so zu fühlen. — Ich möchte das Thema jetzt wechseln."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Danke fürs Teilen. — Das war alles, was ich dazu sagen werde."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Das macht Sinn. — Ich bin noch nicht bereit, mehr zu erzählen."
+  - prefix: SEM_VALIDATED_DISCLOSURE
+    value: "Ihre Gefühle sind berechtigt. — Lassen wir es dabei bewenden."
+
+  # META Markers
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Die heutige Sitzung war wie jede andere auch."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Es gab weder besondere Höhen noch Tiefen."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Die Dynamik war neutral und unverändert."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Ein durchschnittliches Gespräch ohne besondere Vorkommnisse."
+  - prefix: MEMA_RAPPORT_DYNAMICS
+    value: "Die Beziehungsdynamik war heute völlig statisch."
+
+  # SEM_BOUNDARY_SETTING
+  - prefix: SEM_BOUNDARY_SETTING
+    value: "Mach, was du willst, ist mir egal."
+  - prefix: SEM_BOUNDARY_SETTING
+    value: "Ich bin für alles offen, keine Grenzen."
+  - prefix: SEM_BOUNDARY_SETTING
+    value: "Du kannst mich jederzeit anrufen, Tag und Nacht."
+  - prefix: SEM_BOUNDARY_SETTING
+    value: "Ich passe mich da ganz dir an."
+  - prefix: SEM_BOUNDARY_SETTING
+    value: "Es gibt nichts, was mir zu viel wäre."
+
+  # SEM_COMMITMENT_REQUEST
+  - prefix: SEM_COMMITMENT_REQUEST
+    value: "Denk einfach mal drüber nach."
+  - prefix: SEM_COMMITMENT_REQUEST
+    value: "Vielleicht könnten wir das irgendwann mal machen."
+  - prefix: SEM_COMMITMENT_REQUEST
+    value: "Wäre schön, wenn das klappt."
+  - prefix: SEM_COMMITMENT_REQUEST
+    value: "Kein Druck, aber es wäre eine Option."
+  - prefix: SEM_COMMITMENT_REQUEST
+    value: "Schau einfach, wie es dir passt."
+
+  # SEM_DOUBT_UNCERTAINTY
+  - prefix: SEM_DOUBT_UNCERTAINTY
+    value: "Daran gibt es absolut nichts zu rütteln."
+  - prefix: SEM_DOUBT_UNCERTAINTY
+    value: "Ich bin mir meiner Sache todsicher."
+  - prefix: SEM_DOUBT_UNCERTAINTY
+    value: "Das ist eine unumstößliche Tatsache."
+  - prefix: SEM_DOUBT_UNCERTAINTY
+    value: "Ich habe nicht den geringsten Zweifel."
+  - prefix: SEM_DOUBT_UNCERTAINTY
+    value: "Die Sache ist zu 100% klar."
+
+  # SEM_VALIDATION_OF_FEELING
+  - prefix: SEM_VALIDATION_OF_FEELING
+    value: "Hör auf zu heulen."
+  - prefix: SEM_VALIDATION_OF_FEELING
+    value: "Das ist doch kein Grund, so emotional zu werden."
+  - prefix: SEM_VALIDATION_OF_FEELING
+    value: "Gefühle sind hier fehl am Platz."
+  - prefix: SEM_VALIDATION_OF_FEELING
+    value: "Warum machst du so ein Drama daraus?"
+  - prefix: SEM_VALIDATION_OF_FEELING
+    value: "Das ist doch albern, sich so zu fühlen."
+negative_examples:
+  - prefix: ATO_
+    value: "Ich fühle mich ganz normal heute."  # Nah an Emotion, aber neutral statt high/low valence
+  - prefix: ATO_
+    value: "Das ist okay, denke ich."  # Nah an Hedging, aber zu schwach für einen echten Cue
+  - prefix: ATO_
+    value: "Oh, das war lustig."  # Nah an Laughter Event, aber aufrichtige Freude statt markiertem Event
+  - prefix: ATO_
+    value: "Ich rede einfach weiter."  # Nah an Pause, aber kontinuierlich ohne Unterbrechung
+  - prefix: ATO_
+    value: "Das klingt gut."  # Nah an Positive Valence, aber mild statt stark
+  - prefix: ATO_
+    value: "Ich bin entspannt."  # Nah an Stress, aber entspannt statt full stress
+  - prefix: ATO_
+    value: "Vielleicht ist es so."  # Nah an Unclear Intention, aber klare Annahme
+  - prefix: ATO_
+    value: "Ich sehe das klar."  # Nah an Self Observation, aber keine echte Reflexion
+  - prefix: ATO_
+    value: "Das ist neutral."  # Nah an Valence Marker, aber mittlere Valenz
+  - prefix: ATO_
+    value: "Kein Problem."  # Nah an Validation, aber einfache Zustimmung statt Boundary
+  - prefix: SEM_
+    value: "Lass uns das besprechen."  # Nah an Boundary Setting, aber Einladung statt Setzung
+  - prefix: SEM_
+    value: "Ich verstehe deinen Punkt."  # Nah an Validation of Feeling, aber keine Suche danach
+  - prefix: SEM_
+    value: "Das war mein Fehler."  # Nah an Blame Shifting, aber Selbstübernahme statt Shift
+  - prefix: SEM_
+    value: "Ich fühle mich gut."  # Nah an Emotional Complexity, aber einfache positive Emotion
+  - prefix: SEM_
+    value: "Vielleicht später."  # Nah an Soft Decline, aber Verzögerung statt Rejection
+  - prefix: SEM_
+    value: "Das ist interessant."  # Nah an Introspection, aber oberflächliche Beobachtung
+  - prefix: SEM_
+    value: "Du hast recht."  # Nah an Projection, aber direkte Zustimmung
+  - prefix: SEM_
+    value: "Lass uns pausieren."  # Nah an Silence Withdraw, aber explizite Pausevorschlag
+  - prefix: SEM_
+    value: "Ich bin einverstanden."  # Nah an Commitment Request, aber Zustimmung ohne Request
+  - prefix: SEM_
+    value: "Das ergibt Sinn."  # Nah an Doubt Uncertainty, aber klare Bestätigung
+  - prefix: CLU_
+    value: "Ich fühle mich sicher."  # Nah an Attachment Style Secure, aber direkte Aussage
+  - prefix: CLU_
+    value: "Lass uns zusammenarbeiten."  # Nah an Emotional Support, aber allgemeine Kooperation
+  - prefix: CLU_
+    value: "Das ist normal."  # Nah an Gottman Toxicity, aber neutrale Normalität
+  - prefix: CLU_
+    value: "Ich vertraue dir."  # Nah an Behavior Marker System, aber positives Vertrauen
+  - prefix: CLU_
+    value: "Kein Konflikt hier."  # Nah an Defensive Retreat, aber Abwesenheit von Konflikt
+  - prefix: CLU_
+    value: "Ich bin unabhängig."  # Nah an Self Reliance, aber direkte Unabhängigkeit
+  - prefix: CLU_
+    value: "Das fühlt sich gut an."  # Nah an Intuition Uncertainty, aber sichere Intuition
+  - prefix: CLU_
+    value: "Wir spiegeln uns."  # Nah an Therapeutic Mirroring, aber explizite Aussage
+  - prefix: CLU_
+    value: "Kein Schutz nötig."  # Nah an Self Protection Tactics, aber keine Notwendigkeit
+  - prefix: CLU_
+    value: "Das ist adaptiv."  # Nah an Adaptive Polarization, aber positives Adaptives
+  - prefix: MEMA_
+    value: "Alles macht Sinn."  # Nah an Meaning Crisis, aber vollständiger Sinn
+  - prefix: MEMA_
+    value: "Ich bin fokussiert."  # Nah an Dissociative Compartmentalization, aber integriert
+  - prefix: MEMA_
+    value: "Konflikt gelöst."  # Nah an Destructive Conflict Dynamics, aber konstruktive Lösung
+  - prefix: MEMA_
+    value: "Ich fühle mich ganz."  # Nah an Fragmented Narrative, aber ganzes Selbst
+  - prefix: MEMA_
+    value: "Normale Dynamik."  # Nah an Destructive Dynamics, aber normale Interaktion
+  - prefix: MEMA_
+    value: "Kein Sinnverlust."  # Nah an Meaning Crisis, aber stabiler Sinn
+  - prefix: MEMA_
+    value: "Emotionen stabil."  # Nah an Dissociative, aber stabile Emotionen
+  - prefix: MEMA_
+    value: "Wir kommunizieren gut."  # Nah an Conflict Dynamics, aber gute Kommunikation
+  - prefix: MEMA_
+    value: "Ich bin präsent."  # Nah an Dissociative, aber volle Präsenz
+  - prefix: MEMA_
+    value: "Leben hat Zweck."  # Nah an Meaning Crisis, aber klarer Zweck
+
+schema_version: "3.4"

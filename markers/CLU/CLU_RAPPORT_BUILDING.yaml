@@ -1,0 +1,27 @@
+id: CLU_RAPPORT_BUILDING
+version: '3.4'
+category: CLUSTER
+description: Nachhaltige unterstützende Bewegungen und responsive Offenheit
+frame:
+  signal:
+  - sustained supportive moves by therapist and responsive openness
+  concept: working alliance in session
+  pragmatics: safety + exploration
+  narrative: engaged collaboration
+composed_of:
+- SEM_RAPPORT_SUPPORT_MOVE
+- SEM_VALIDATED_DISCLOSURE
+activation:
+  rule: COUNT(SEM_RAPPORT_SUPPORT_MOVE)+COUNT(SEM_VALIDATED_DISCLOSURE) >= 3 IN 20
+  window:
+    messages: 20
+scoring:
+  weight: 1.4
+examples:
+  positive: []
+  negative: []
+tags:
+- cluster
+- rapport
+- alliance
+- safety

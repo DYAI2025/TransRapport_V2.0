@@ -1,0 +1,21 @@
+id: ATO_FULL_STRESS
+frame:
+  signal:
+  - voll im Stress
+  - mega Stress
+  - stressig
+  - total gestresst
+  concept: Stress als Entschuldigung
+  pragmatics: Verfügbarkeitsausrede
+  narrative: stress_excuse
+pattern:
+- (?i)\b(voll|total|mega)\s+(im\s+)?stress\b
+- (?i)\b(echt|super|total)\s+stressig\b
+- (?i)\b(total|voll|mega)\s+gestresst\b
+- (?i)\bstress\s+(pur|total|grad)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- stress_signal
+- excuse

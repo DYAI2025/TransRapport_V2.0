@@ -1,0 +1,26 @@
+id: CLU_ATTACHMENT_STYLE_ANXIOUS
+version: '3.3'
+frame:
+  signal:
+  - ängstliche Bindungshinweise
+  - Unsicherheits- und Verlassensangst-Sprache
+  concept: 'Bindungsstil: ängstlich'
+  pragmatics: Nähe-Suche bei gleichzeitiger Alarmierung
+  narrative: Sehnsucht und Sorge
+composed_of:
+- type: semantic
+  marker_ids:
+  - ANXIOUS_CHILDHOOD_REFERENCE
+activation:
+  rule: COUNT(ANXIOUS_CHILDHOOD_REFERENCE) >= 2 IN 20
+  window:
+    messages: 20
+examples:
+  positive: []
+  negative: []
+tags:
+- needs_review
+- cluster
+- attachment
+- anxious
+meta: null

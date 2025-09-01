@@ -1,0 +1,26 @@
+id: ATO_WE_LANGUAGE
+version: '3.4'
+category: ATOMIC
+description: Marker für Wir-Sprache und gemeinsame Ausrichtung
+frame:
+  signal:
+  - we/us/our terms
+  concept: relational alignment
+  pragmatics: affiliation / joint stance
+  narrative: togetherness
+pattern:
+- \bwir\b|\bwe\b
+- \bgemeinsam\b|\btogether\b
+- \bunser\w*\b|\bour\b
+activation:
+  rule: ANY in 1 message
+scoring:
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- affiliation
+- bonding
+- rapport_signal

@@ -1,0 +1,25 @@
+id: SEM_VALIDATION_OF_FEELING
+version: '3.3'
+lang: de
+level: SEM
+frame:
+  signal:
+  - Gefühl des Gegenübers explizit spiegeln/anerkennen
+  - Druck rausnehmen, Sicherheit geben
+  concept: Validierung von Emotion
+  pragmatics: Deeskalation durch Anerkennung
+  narrative: Verbundenheit trotz Konflikt
+pattern:
+- (?i)\b(das|dein|euer)\s*(gefühl|unsicherheit|verletzung)\s*(kommt|kommt.*) (an|bei
+  mir an)\b
+- (?i)\bich\s*(sehe|verstehe|erkenne)\s*(dein|euer)\s*(gefühl|schmerz|angst)\b
+- (?i)\b(tut\s+mir\s+leid|ich\s+weiß,\s+dass\s+das\s+wehtut)\b
+- (?i)\b(lass\s+uns\s+schauen|wir\s+schauen)\s*,?\s*(was|wie)\s+dir\s*(hilft|guttut)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- validation
+- empathy
+- deescalation
+- semantics

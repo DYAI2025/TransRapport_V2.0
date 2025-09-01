@@ -1,0 +1,21 @@
+id: SEM_SOFT_DECLINE
+lang: de
+category: SEMANTIC
+description: Indirekte, höfliche Absage durch Ausdruck von Unsicherheit.
+frame:
+  signal:
+  - Höfliche Absage mit Unsicherheitsphrase
+  concept: Soft Decline
+  pragmatics: Höfliche Abwehr
+  narrative: Rückzug
+composed_of:
+- ATO_UNCERTAINTY_PHRASE
+activation_logic: ANY 1
+scoring:
+  base: 1.2
+  weight: 1.0
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic

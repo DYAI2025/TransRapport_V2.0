@@ -1,0 +1,47 @@
+id: SEM_FRAGMENTED_SELF_NARRATIVE
+version: '3.3'
+frame:
+  signal:
+  - Widersprüchliche Selbstaussagen ohne Integration
+  concept: Fragmentierte Selbstnarrative
+  pragmatics: Kognitive Dissonanz beim Empfänger
+  narrative: self_contradiction
+contradiction_detection:
+  window: 500
+  opposing_pairs:
+  - - immer
+    - nie
+  - - ehrlich
+    - musste lügen
+  - - hasse Konflikt
+    - muss gesagt werden
+  - - für alle da
+    - kann nicht helfen
+  - - spiele keine Spiele
+    - werde nicht antworten
+  - - direkt
+    - kann es nicht sagen
+activation:
+  rule: CONTRADICTION DETECTED
+window:
+  messages: 30
+  character_window: 500
+scoring:
+  base: 2.7
+  weight: 0.82
+  decay: 0.01
+  formula: logistic
+psychological_indicators:
+- splitting_defense
+- unstable_self_concept
+- narcissistic_organization
+- cognitive_dissonance
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- contradiction
+- self_concept
+- splitting
+schema_version: '3.3'

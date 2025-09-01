@@ -1,0 +1,25 @@
+id: SEM_VALIDATION_SEEKING
+schema_version: LD-3.3
+lang: en
+category: SEMANTIC
+description: Semantic pattern for validation seeking behavior
+frame:
+  signal:
+  - approval seeking
+  concept: Validation Seeking
+  pragmatics: micro pattern recognition
+  narrative: intent
+composed_of:
+- ATO_VALIDATION_SEEKING
+- ATO_UNCERTAINTY
+- ATO_EMOTIONAL_REGULATION
+activation_logic: ANY 2
+window:
+  messages: 2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- v3.3
+- validation

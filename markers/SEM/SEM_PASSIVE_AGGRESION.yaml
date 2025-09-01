@@ -1,0 +1,28 @@
+id: SEM_PASSIVE_AGGRESSION
+lang: en
+category: SEMANTIC
+description: Subtle attacks (barbs/sarcasm) instead of direct address.
+frame:
+  signal:
+  - '''Nice for you.'''
+  - '''Figures.'''
+  - thinly veiled barbs
+  concept: Covert attack
+  pragmatics: Face-saving while fueling conflict
+  narrative: Indirect evaluation
+composed_of:
+- ATO_SARCASM
+- ATO_BARBED_COMMENT
+activation_logic: ANY 2 IN 3 messages
+scoring:
+  base: 1.3
+  weight: 1.0
+window:
+  messages: 5
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- aggression
+- indirect

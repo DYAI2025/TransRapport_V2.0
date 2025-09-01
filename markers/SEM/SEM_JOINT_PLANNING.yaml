@@ -1,0 +1,25 @@
+id: SEM_JOINT_PLANNING
+version: '3.4'
+category: SEMANTIC
+description: Gemeinsame Aufgabenorientierung
+frame:
+  signal:
+  - we-language + next steps
+  concept: shared task focus
+  pragmatics: alliance strengthening
+  narrative: forward together
+composed_of:
+- ATO_WE_LANGUAGE
+- ATO_CLARIFICATION_REQUEST
+activation:
+  rule: COUNT(ATO_WE_LANGUAGE)>=1 AND COUNT(ATO_CLARIFICATION_REQUEST)>=1 IN 5
+scoring:
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- semantic
+- alliance
+- planning
+- rapport_signal

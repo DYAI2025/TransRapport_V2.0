@@ -1,0 +1,23 @@
+id: ATO_LAUGHTER_EVENT
+schema_version: LD-3.3
+lang: de
+category: ATOMIC
+description: Atomic pattern for laughter detection
+frame:
+  signal:
+  - Vokal Burst Pattern
+  concept: lachen
+  pragmatics: Emotion
+  narrative: audio
+detect_class:
+  module: prosody.laughter
+  params:
+    min_duration_ms: 300
+    spectral_pattern: burst_voiced
+examples:
+  positive: []
+  negative: []
+tags:
+- emotion
+- audio
+- atomic

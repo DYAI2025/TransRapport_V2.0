@@ -1,0 +1,23 @@
+id: ATO_PAUSE_MICRO
+schema_version: LD-3.3
+lang: de
+category: ATOMIC
+description: Atomic pattern for micro pauses (120-300ms)
+frame:
+  signal:
+  - Pause 120–300 ms
+  concept: Mikro-Pause
+  pragmatics: Rhythmus
+  narrative: audio
+detect_class:
+  module: prosody.pause_micro
+  params:
+    min_ms: 120
+    max_ms: 300
+examples:
+  positive: []
+  negative: []
+tags:
+- pause
+- audio
+- atomic

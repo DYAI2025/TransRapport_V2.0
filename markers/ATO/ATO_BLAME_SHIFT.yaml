@@ -1,0 +1,20 @@
+id: ATO_BLAME_SHIFT
+schema_version: LD-3.3
+lang: en
+category: ATOMIC
+description: Atomic pattern for blame shifting language
+frame:
+  signal:
+  - blame shift
+  concept: Blame shifting signal
+  pragmatics: lexical indicator
+  narrative: surface
+pattern:
+- (?i)\b(you made me|you forced me|because of you|your fault)\b
+examples:
+  positive: []
+  negative: []
+tags:
+- atomic
+- v3.3
+- auto-generated

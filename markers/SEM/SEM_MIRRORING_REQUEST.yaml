@@ -1,0 +1,20 @@
+id: SEM_MIRRORING_REQUEST
+frame:
+  signal:
+  - Spiegelung anfordern
+  concept: Spiegelung
+  pragmatics: Selbstreflexion
+  narrative: feedback
+composed_of:
+- ATO_REQUEST_FOR_FEEDBACK
+- ATO_SELF_OBSERVATION
+activation:
+  rule: ANY 2 IN 3 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- mirroring

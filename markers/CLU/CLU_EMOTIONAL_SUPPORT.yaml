@@ -1,0 +1,20 @@
+id: CLU_EMOTIONAL_SUPPORT
+frame:
+  signal:
+  - emotionale Unterstützung
+  concept: Unterstützung
+  pragmatics: Empathie
+  narrative: support
+composed_of:
+- ATO_INVITING_RESONANCE
+- SEM_VALIDATION_OF_FEELING
+activation:
+  rule: AT_LEAST 2 IN 5 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- support

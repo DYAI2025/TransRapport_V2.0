@@ -1,0 +1,21 @@
+id: CLU_ADAPTIVE_POLARIZATION_MARKER
+frame:
+  signal:
+  - sag mal
+  - hör zu
+  - verstehst du
+  concept: Kommunikationsmuster
+  pragmatics: Dialog führen
+  narrative: exchange
+composed_of:
+- SEM_GENERIC_PATTERN
+activation:
+  rule: AT_LEAST 2 IN 5 messages
+scoring:
+  base: 1.5
+  weight: 1.2
+examples:
+  positive: []
+  negative: []
+tags:
+- communication

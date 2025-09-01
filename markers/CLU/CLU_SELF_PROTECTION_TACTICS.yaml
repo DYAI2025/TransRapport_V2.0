@@ -1,0 +1,29 @@
+id: CLU_SELF_PROTECTION_TACTICS
+lang: en
+category: CLUSTER
+description: Sustained self-protection/deception tactics (blame shifting + minimization)
+  within the window.
+frame:
+  signal:
+  - '''because of you'' + ''no big deal'' repeatedly'
+  concept: Defensive pattern
+  pragmatics: Evasion of responsibility, trust loss
+  narrative: Recurring protection script
+composed_of:
+- SEM_BLAME_SHIFTING
+- SEM_MINIMIZATION
+activation_logic: AT_LEAST 3 INSTANCES IN 7 days
+scoring:
+  base: 1.7
+  weight: 1.25
+  decay: 0.02
+window:
+  days: 7
+examples:
+  positive: []
+  negative: []
+tags:
+- needs_review
+- cluster
+- tactics
+- gaslighting

@@ -1,0 +1,22 @@
+id: ATO_PAUSE_LONG
+schema_version: LD-3.3
+lang: de
+category: ATOMIC
+description: Atomic pattern for long speech pauses (≥600ms)
+frame:
+  signal:
+  - Pause ≥ 600 ms
+  concept: Sprechpause (lang)
+  pragmatics: Segmentierung
+  narrative: audio
+detect_class:
+  module: prosody.pause_long
+  params:
+    min_ms: 600
+examples:
+  positive: []
+  negative: []
+tags:
+- pause
+- audio
+- atomic

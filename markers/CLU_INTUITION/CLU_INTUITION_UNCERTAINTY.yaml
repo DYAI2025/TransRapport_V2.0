@@ -1,0 +1,55 @@
+id: CLU_INTUITION_UNCERTAINTY
+category: CLU_INTUITION
+schema_version: '3.4'
+lang: en
+frame:
+  signal:
+  - intuition
+  - weak-aggregation
+  concept: 'Vorahnung: Unsicherheit/Vorsicht'
+  pragmatics: Hypothesen vorsichtig testen
+  narrative: hypothesis
+tags:
+- intuition
+- uncertainty
+- hedging
+- learning
+criteria: ''
+composed_of:
+- SEM_UNCERTAINTY_TONING
+- SEM_TENTATIVE_INFERENCE
+- SEM_PROBABILISTIC_LANGUAGE
+activation:
+  rule: AT_LEAST 2 DISTINCT SEMs IN 5 messages
+scoring:
+  base: 0.5
+  weight: 1.0
+metadata:
+  intuition:
+    state: provisional
+    confirm_window: 5
+    confirm_rule: AT_LEAST 1 of [SEM_UNCERTAINTY_TONING, SEM_TENTATIVE_INFERENCE]
+      IN confirm_window
+    multiplier_on_confirm: 1.5
+    decay_window: 7
+    penalize_false: 1.0
+  telemetry_keys:
+    counter_confirmed: INT_UNCERT.confirmed
+    counter_retracted: INT_UNCERT.retracted
+    ewma_precision: INT_UNCERT.ewma_precision
+examples:
+  positive:
+  - Hedging- und Vermutungs‑Formulierungen häufen sich leicht
+  - Ich habe so ein Gefühl, dass es vielleicht schwierig werden könnte.
+  - Es scheint mir, als ob das Ergebnis möglicherweise nicht ganz klar ist.
+  - Ich vermute, dass es eventuell zu Verzögerungen kommen könnte.
+  - Ich bin mir nicht sicher, aber es könnte sein, dass wir etwas übersehen haben.
+  - Es ist denkbar, dass sich die Situation möglicherweise noch ändert.
+  - Ich habe eine Ahnung, dass es vielleicht nicht so einfach wird, wie wir denken.
+  - Es scheint wahrscheinlich, dass wir uns auf unvorhergesehene Dinge einstellen
+    müssen.
+  - Ich glaube, es besteht die Möglichkeit, dass wir einen Plan B brauchen.
+  - Ich bin mir nicht ganz sicher, aber ich habe das Gefühl, dass wir vorsichtig sein
+    sollten.
+  - Es ist nicht ausgeschlossen, dass es vielleicht doch anders kommt als erwartet.
+  negative: []
