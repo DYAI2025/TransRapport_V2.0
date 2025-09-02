@@ -21,6 +21,10 @@ ECAPA/
 # Env
 .env
 
+# Runtime files
+*.log
+*.pid
+
 # Node/npm leftovers if any
 node_modules/
 package-lock.json
