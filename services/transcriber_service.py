@@ -96,6 +96,7 @@ class Session(BaseModel):
     _diarizer: object = PrivateAttr(default=None)
     _marker_engine: Optional[MarkerEngine] = PrivateAttr(default=None)
     _telemetry: Optional[IntuitionTelemetry] = PrivateAttr(default=None)
+    _elapsed_seconds: float = PrivateAttr(default=0.0)  # Track total elapsed audio time
 
     def add_subscriber(self, loop, async_queue) -> None:
         self._subscribers.append((loop, async_queue))
@@ -143,25 +144,26 @@ if not FAKE_ASR and WhisperModel is not None:
         RUN_MODE = "mock"
 
 
-def _fake_transcribe_window(pcm_bytes: bytes, sr: int):
+def _fake_transcribe_window(pcm_bytes: bytes, sr: int, time_offset: float = 0.0):
     # Estimate seconds from PCM16 mono byte length
     n_bytes = len(pcm_bytes)
     sec = max(n_bytes / float(2 * sr), 0.0)
-    # Emit a simple single segment covering the chunk
+    # Emit a simple single segment covering the chunk with absolute timestamps
     return [{
-        "t0": 0.0,
-        "t1": round(sec, 3),
+        "t0": time_offset,
+        "t1": round(time_offset + sec, 3),
         "text": "[mock transcript]",
         "words": [],
     }]
 
 
-def transcribe_window(pcm_bytes: bytes, sr: int, lang: Optional[str]):
+def transcribe_window(pcm_bytes: bytes, sr: int, lang: Optional[str], time_offset: float = 0.0):
     """
     Transkribiert einen PCM16-Mono-Chunk (bytes) mit faster-whisper.
+    time_offset: absolute time offset for this window in the session.
     """
     if FAKE_ASR or whisper_model is None:
-        return _fake_transcribe_window(pcm_bytes, sr)
+        return _fake_transcribe_window(pcm_bytes, sr, time_offset)
 
     import numpy as np
     import soundfile as sf
@@ -200,15 +202,18 @@ def transcribe_window(pcm_bytes: bytes, sr: int, lang: Optional[str]):
 
     out = []
     for s in segments:
+        # Adjust timestamps to be absolute within the session
+        seg_start = float(getattr(s, "start", 0.0)) + time_offset
+        seg_end = float(getattr(s, "end", 0.0)) + time_offset
         out.append({
-            "t0": float(getattr(s, "start", 0.0)),
-            "t1": float(getattr(s, "end", 0.0)),
+            "t0": seg_start,
+            "t1": seg_end,
             "text": (getattr(s, "text", "") or "").strip(),
             "words": [
                 {
                     "w": getattr(w, "word", ""),
-                    "t0": float(getattr(w, "start", getattr(s, "start", 0.0)) or getattr(s, "start", 0.0)),
-                    "t1": float(getattr(w, "end", getattr(s, "end", 0.0)) or getattr(s, "end", 0.0)),
+                    "t0": float(getattr(w, "start", getattr(s, "start", 0.0)) or getattr(s, "start", 0.0)) + time_offset,
+                    "t1": float(getattr(w, "end", getattr(s, "end", 0.0)) or getattr(s, "end", 0.0)) + time_offset,
                 }
                 for w in (getattr(s, "words", None) or [])
             ],
@@ -266,16 +271,27 @@ def _worker_loop(session: Session, sr: int, window_sec: int, loop, out_async_que
             return
         try:
             pcm_bytes = bytes(buf)
-            new_segments = transcribe_window(pcm_bytes, sr, session.lang or LANG_DEFAULT)
+            # Calculate duration of this window and use current elapsed time as offset
+            window_duration = len(pcm_bytes) / float(2 * sr)  # PCM16 mono
+            time_offset = session._elapsed_seconds
+            
+            new_segments = transcribe_window(pcm_bytes, sr, session.lang or LANG_DEFAULT, time_offset)
+            
+            # Update elapsed time for next window
+            session._elapsed_seconds += window_duration
+            
             # Diarization: assign speaker labels per new segment
             try:
                 import numpy as np
                 pcm_f32 = np.frombuffer(pcm_bytes, dtype='<i2').astype('float32') / 32768.0
                 labels = session._diarizer.label_segments(pcm_f32, sr, new_segments)
-                # Prosody per segment
+                # Prosody per segment (adjust timing for absolute time)
                 for seg in new_segments:
                     try:
-                        seg['prosody'] = extract_prosody(pcm_f32, sr, float(seg.get('t0', 0.0)), float(seg.get('t1', 0.0)))
+                        # Use absolute timestamps for prosody extraction
+                        seg_start = float(seg.get('t0', 0.0)) - time_offset  # relative to this window
+                        seg_end = float(seg.get('t1', 0.0)) - time_offset    # relative to this window
+                        seg['prosody'] = extract_prosody(pcm_f32, sr, seg_start, seg_end)
                     except Exception:
                         seg['prosody'] = {}
                 for seg, lab in zip(new_segments, labels):
