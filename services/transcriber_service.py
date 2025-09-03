@@ -5,12 +5,13 @@ import queue
 import threading
 import tempfile
 import time
+from datetime import datetime
 import re
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 
 import yaml
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, BackgroundTasks
 from fastapi.responses import JSONResponse, PlainTextResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
@@ -35,7 +36,8 @@ from engine.prosody import extract_prosody
 from engine.summarizer import Summarizer
 from engine.topics import extract_topics
 from engine.chapters import detect_chapters
-from reports.renderer import render_markdown
+from engine.logging_framework import get_logger, with_error_handling, setup_common_error_handlers
+from engine.report_pipeline import ReportGenerator, ReportRequest, ReportFormat, generate_report_background
 
 # Disable HF Xet optimized downloads to avoid native dependency issues
 os.environ.setdefault("HF_HUB_ENABLE_HF_XET", "0")
@@ -85,6 +87,13 @@ DEMO_MARKERS = os.environ.get("SERAPI_DEMO_MARKERS", "").lower() in {"1", "true"
 
 
 app = FastAPI(title="Serapi Transcriber (I1) - Offline")
+
+# Initialize logging and error handling
+setup_common_error_handlers()
+logger = get_logger('transcriber_service')
+
+# Initialize report generator
+report_generator = ReportGenerator(DATA_ROOT)
 
 
 # ---- In-Memory Session Registry ----
@@ -943,6 +952,222 @@ async def ws_events(ws: WebSocket):
             await ws.close()
         except Exception:
             pass
+
+
+# ---- Report Generation Endpoints ----
+
+@app.post("/session/{sid}/report/generate")
+async def generate_session_report(
+    sid: str, 
+    background_tasks: BackgroundTasks,
+    format: str = "markdown",
+    include_telemetry: bool = True,
+    include_markers: bool = True,
+    include_transcript: bool = True,
+    include_stats: bool = True
+):
+    """Generate a report for a session."""
+    sess = SESSIONS.get(sid)
+    if not sess:
+        return JSONResponse({"error": "session not found"}, status_code=404)
+    
+    try:
+        report_format = ReportFormat(format.lower())
+    except ValueError:
+        return JSONResponse({"error": f"unsupported format: {format}"}, status_code=400)
+    
+    request = ReportRequest(
+        session_id=sid,
+        format=report_format,
+        include_telemetry=include_telemetry,
+        include_markers=include_markers,
+        include_transcript=include_transcript,
+        include_stats=include_stats
+    )
+    
+    background_tasks.add_task(generate_report_background, report_generator, request)
+    
+    return {
+        "message": "report generation started",
+        "session_id": sid,
+        "format": format,
+        "request_id": f"{sid}_{format}_{int(time.time())}"
+    }
+
+
+@app.get("/session/{sid}/reports")
+def list_session_reports(sid: str):
+    """List all reports for a session."""
+    sess = SESSIONS.get(sid)
+    if not sess:
+        return JSONResponse({"error": "session not found"}, status_code=404)
+    
+    reports = report_generator.list_session_reports(sid)
+    return {"session_id": sid, "reports": reports}
+
+
+# ---- Telemetry Endpoints ----
+
+@app.get("/telemetry/health")
+def get_telemetry_health():
+    """Get system health telemetry."""
+    health_data = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "system": {
+            "mode": "mock" if FAKE_ASR else "real",
+            "model_loaded": _whisper_pipeline is not None and not FAKE_ASR,
+            "active_sessions": len(SESSIONS),
+            "data_root": str(DATA_ROOT),
+        },
+        "sessions": {}
+    }
+    
+    for sid, sess in SESSIONS.items():
+        health_data["sessions"][sid] = {
+            "segments_count": len(sess.segments),
+            "language": sess.lang,
+            "has_worker": hasattr(sess, '_worker_thread') and sess._worker_thread is not None
+        }
+    
+    return health_data
+
+
+@app.get("/telemetry/intuition")
+def get_intuition_telemetry():
+    """Get CLU_INTUITION marker telemetry."""
+    intuition_data = {}
+    
+    for sid, sess in SESSIONS.items():
+        if not sess._marker_engine:
+            continue
+            
+        # Get marker events from the session
+        markers = getattr(sess, '_marker_events', [])
+        
+        for marker in markers:
+            name = marker.get('name', '')
+            if name.startswith('CLU_INTUITION_'):
+                family = name.replace('CLU_INTUITION_', '')
+                if family not in intuition_data:
+                    intuition_data[family] = {
+                        "total_detections": 0,
+                        "confirmed": 0,
+                        "provisional": 0,
+                        "sessions": []
+                    }
+                
+                intuition_data[family]["total_detections"] += 1
+                intuition_data[family]["sessions"].append(sid)
+                
+                # Simple heuristic: consider recent markers as confirmed
+                if marker.get('timestamp', 0) > time.time() - 300:  # Last 5 minutes
+                    intuition_data[family]["confirmed"] += 1
+                else:
+                    intuition_data[family]["provisional"] += 1
+    
+    # Calculate precision estimates
+    for family, data in intuition_data.items():
+        total = data["total_detections"]
+        confirmed = data["confirmed"]
+        data["precision"] = (confirmed / total * 100) if total > 0 else 0.0
+        data["sessions"] = list(set(data["sessions"]))  # Remove duplicates
+    
+    return {
+        "timestamp": datetime.utcnow().isoformat(),
+        "families": intuition_data,
+        "summary": {
+            "total_families": len(intuition_data),
+            "total_detections": sum(d["total_detections"] for d in intuition_data.values()),
+            "avg_precision": sum(d["precision"] for d in intuition_data.values()) / len(intuition_data) if intuition_data else 0.0
+        }
+    }
+
+
+@app.get("/telemetry/markers/{session_id}")
+def get_session_marker_telemetry(session_id: str):
+    """Get detailed marker telemetry for a specific session."""
+    sess = SESSIONS.get(session_id)
+    if not sess:
+        return JSONResponse({"error": "session not found"}, status_code=404)
+    
+    if not sess._marker_engine:
+        return JSONResponse({"error": "marker engine not loaded"}, status_code=404)
+    
+    # Get all marker events for this session
+    marker_events = getattr(sess, '_marker_events', [])
+    
+    # Group by marker type
+    marker_stats = {}
+    for event in marker_events:
+        name = event.get('name', 'unknown')
+        if name not in marker_stats:
+            marker_stats[name] = {
+                "count": 0,
+                "first_detection": None,
+                "last_detection": None,
+                "avg_confidence": 0.0,
+                "events": []
+            }
+        
+        marker_stats[name]["count"] += 1
+        marker_stats[name]["events"].append(event)
+        
+        timestamp = event.get('timestamp', 0)
+        if marker_stats[name]["first_detection"] is None:
+            marker_stats[name]["first_detection"] = timestamp
+        marker_stats[name]["last_detection"] = timestamp
+        
+        # Calculate average confidence if available
+        confidence = event.get('confidence', 1.0)
+        current_avg = marker_stats[name]["avg_confidence"]
+        count = marker_stats[name]["count"]
+        marker_stats[name]["avg_confidence"] = (current_avg * (count - 1) + confidence) / count
+    
+    return {
+        "session_id": session_id,
+        "timestamp": datetime.utcnow().isoformat(),
+        "total_markers": len(marker_events),
+        "unique_types": len(marker_stats),
+        "markers": marker_stats
+    }
+
+
+# ---- Configuration Validation Endpoint ----
+
+@app.get("/admin/validate-config")
+def validate_system_config():
+    """Validate system configuration."""
+    try:
+        from tools.validate_config import ConfigValidator
+        
+        validator = ConfigValidator()
+        valid, results = validator.validate_all()
+        
+        return {
+            "valid": valid,
+            "timestamp": datetime.utcnow().isoformat(),
+            "results": [
+                {
+                    "level": r.level.value,
+                    "message": r.message,
+                    "component": r.component,
+                    "details": r.details
+                }
+                for r in results
+            ],
+            "summary": {
+                "errors": len([r for r in results if r.level.value == "error"]),
+                "warnings": len([r for r in results if r.level.value == "warning"]),
+                "info": len([r for r in results if r.level.value == "info"])
+            }
+        }
+    except Exception as e:
+        logger.handle_error(e, {"endpoint": "validate_config"})
+        return JSONResponse(
+            {"error": "configuration validation failed", "details": str(e)}, 
+            status_code=500
+        )
+
 
 # ---- Static UI ----
 try:
