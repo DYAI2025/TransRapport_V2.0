@@ -1,6 +1,7 @@
 paths:
   data_root: "./data/sessions"
-  whisper_model_dir: "/Users/benjaminpoersch/Projekte/XEXPERIMENTE/TransRapport_V2/whisperTurboCT2"
+  # Local path to Faster-Whisper CT2 weights (override via SERAPI_WHISPER_MODEL_DIR)
+  whisper_model_dir: "./models/whisper/faster-whisper-large-v3"
   # Marker-Pfad: falls Marker in Nachbar-Repo liegen, z.B. ../markers_repo/markers
   markers_root: "./markers"
 
