@@ -97,3 +97,16 @@ stop-session:
 detect:
 	@test -n "$(SID)" || (echo "Set SID=<session_id>" && exit 1)
 	python3 tools/detect.py --sid $(SID) --host $(HOST) --port $(PORT)
+
+# New backbone tools
+telemetry:
+	python3 tools/telemetry_dashboard.py --host $(HOST) --port $(PORT)
+
+telemetry-snapshot:
+	python3 tools/telemetry_dashboard.py --host $(HOST) --port $(PORT) --once
+
+validate-config:
+	python3 tools/validate_config.py
+
+validate-config-quiet:
+	python3 tools/validate_config.py --quiet

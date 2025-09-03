@@ -20,3 +20,11 @@ diarization:
   vad_energy_db: -35
   min_voiced_ms: 250
   momentum: 0.15
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_enabled: true
+  console_enabled: true
+  max_file_size: "10MB"
+  backup_count: 5
