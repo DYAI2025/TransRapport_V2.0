@@ -20,6 +20,13 @@ try:
 except Exception:  # pragma: no cover - allow running in fake mode without the package
     WhisperModel = None  # type: ignore
 
+try:
+    from .stt_whisper_ct2 import WhisperCT2Pipeline
+    _whisper_pipeline = None
+except ImportError:
+    WhisperCT2Pipeline = None
+    _whisper_pipeline = None
+
 from .srt_export import segments_to_srt, segments_to_txt
 from engine.diarization import DiarizerFactory
 from engine.marker_engine_core import MarkerBundle, MarkerEngine
@@ -156,10 +163,37 @@ def _fake_transcribe_window(pcm_bytes: bytes, sr: int):
     }]
 
 
+def _init_whisper_pipeline():
+    """Initialize the Whisper CT2 pipeline if available."""
+    global _whisper_pipeline
+    if WhisperCT2Pipeline is not None and _whisper_pipeline is None:
+        model_dir = None
+        if MODEL_DIR and hasattr(MODEL_DIR, 'exists') and MODEL_DIR.exists():
+            model_dir = str(MODEL_DIR)
+        _whisper_pipeline = WhisperCT2Pipeline(
+            model_dir=model_dir,
+            mock_mode=FAKE_ASR
+        )
+    return _whisper_pipeline
+
+
 def transcribe_window(pcm_bytes: bytes, sr: int, lang: Optional[str]):
     """
-    Transkribiert einen PCM16-Mono-Chunk (bytes) mit faster-whisper.
+    Transkribiert einen PCM16-Mono-Chunk (bytes) mit faster-whisper oder CT2 pipeline.
     """
+    # Try using the new CT2 pipeline first
+    pipeline = _init_whisper_pipeline()
+    if pipeline is not None:
+        try:
+            import numpy as np
+            # Convert PCM16 bytes to float32 array
+            pcm_array = np.frombuffer(pcm_bytes, dtype="<i2").astype("float32") / 32768.0
+            segments = pipeline.transcribe_array(pcm_array, sr, language=lang)
+            return segments
+        except Exception as e:
+            logger.warning(f"CT2 pipeline failed, falling back to legacy: {e}")
+    
+    # Fallback to legacy implementation
     if FAKE_ASR or whisper_model is None:
         return _fake_transcribe_window(pcm_bytes, sr)
 
@@ -272,12 +306,13 @@ def _worker_loop(session: Session, sr: int, window_sec: int, loop, out_async_que
                 import numpy as np
                 pcm_f32 = np.frombuffer(pcm_bytes, dtype='<i2').astype('float32') / 32768.0
                 labels = session._diarizer.label_segments(pcm_f32, sr, new_segments)
-                # Prosody per segment
+                # Prosody per segment (if not already provided by CT2 pipeline)
                 for seg in new_segments:
-                    try:
-                        seg['prosody'] = extract_prosody(pcm_f32, sr, float(seg.get('t0', 0.0)), float(seg.get('t1', 0.0)))
-                    except Exception:
-                        seg['prosody'] = {}
+                    if 'prosody' not in seg or not seg['prosody']:
+                        try:
+                            seg['prosody'] = extract_prosody(pcm_f32, sr, float(seg.get('t0', 0.0)), float(seg.get('t1', 0.0)))
+                        except Exception:
+                            seg['prosody'] = {}
                 for seg, lab in zip(new_segments, labels):
                     seg['speaker'] = lab
             except Exception:
