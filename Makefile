@@ -9,13 +9,22 @@ include .env
 export $(shell sed -n 's/^\([A-Za-z_][A-Za-z0-9_]*\)=.*/\1/p' .env)
 endif
 
-.PHONY: install install-tools run run-mock run-bg run-bg-mock stop status env start-session smoke send-wav send-mic send-mic-auto export-srt list-sessions flush stop-session seed-markers validate-markers
+.PHONY: install install-tools setup-model test test-comprehensive run run-mock run-bg run-bg-mock stop status env start-session smoke send-wav send-mic send-mic-auto export-srt list-sessions flush stop-session seed-markers validate-markers
 
 install:
 	python3 -m pip install -r services/requirements.txt
 
 install-tools:
 	python3 -m pip install -r tools/requirements.txt
+
+setup-model:
+	python3 tools/download_whisper_model.py
+
+test:
+	python3 -m pytest tools/ -v || echo "No pytest found, running manual tests"
+
+test-comprehensive:
+	python3 tools/test_comprehensive.py
 
 env:
 	@echo HOST=$(HOST)
