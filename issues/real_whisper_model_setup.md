@@ -4,7 +4,7 @@
 Ensure the application uses real Whisper CT2 weights for speech recognition.
 
 ## Tasks
-- [ ] Download and configure the `faster-whisper-large-v3` CT2 weights.
+- [ ] Download and configure the faster-whisper-large-v3 CT2 weights.
 - [ ] Test the full ASR pipeline end-to-end with the real model.
 - [ ] Validate that the system operates completely offline.
 
