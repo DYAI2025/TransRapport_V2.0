@@ -10,7 +10,7 @@ Create a comprehensive testing framework to ensure stability and performance.
 - [ ] Perform performance benchmarking under load.
 
 ## Acceptance Criteria
-- Automated tests validate endpoint behaviour and error cases.
+- Automated tests validate endpoint behavior and error cases.
 - Pipeline tests confirm audio is processed and saved as expected.
 - WebSocket tests verify real-time event delivery.
 - Benchmark results document throughput and latency targets.
